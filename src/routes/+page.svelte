@@ -21,7 +21,7 @@
 
 <style>
 	main {
-		background: #0000 center / cover no-repeat url('./coyle.jpeg');
+		background: #0000 center / cover no-repeat url('/coyle.jpeg');
 		height: 100vh;
 		width: 100vw;
 		display: flex;
