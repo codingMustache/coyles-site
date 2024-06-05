@@ -31,7 +31,7 @@
 	.page-content {
 		background-color: rgba(82, 86, 88, 0.512);
 		text-align: center;
-		padding: 10%;
+		padding: 5%;
 		font-size: larger;
 		color: white;
 		border-radius: 5px;
