@@ -5,6 +5,7 @@ import { msgParser } from '$lib/msgParser';
 export const actions = {
 
   /**
+  * @description: Contact form submission
   @param requet {Request}
   */
   // @ts-ignore
@@ -15,7 +16,7 @@ export const actions = {
     const files = form.getAll('references')
     const attachments = await imgParser(files)
     const htmlParser = msgParser(formObj)
-    
+
     emailer(htmlParser, attachments)
 
     return { success: true };
