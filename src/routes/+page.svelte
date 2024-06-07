@@ -15,6 +15,9 @@
 			<a href="mailto:erniepthethrid@gmail.com">
 				<button> <Email /> Email </button>
 			</a>
+			<a href="/contact">
+				<button>Book an Appointement</button>
+			</a>
 		</div>
 	</div>
 </main>
@@ -45,6 +48,7 @@
 		border-radius: 5px;
 		border: unset;
 		box-shadow: 3px 3px 10px black;
+		min-height: 30px;
 	}
 	.links {
 		display: flex;
