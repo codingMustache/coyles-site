@@ -19,18 +19,31 @@
 		<input name="last name" type="text" />
 		<label for="email"> Email: </label>
 		<input name="email" type="email" />
-		<label for="telephone number"> Phone #: </label>
-		<input name="telephone number" type="tel" />
+		<label for="telephone number">
+			Phone #:
+			<small>Format: 555-555-5555</small>
+		</label>
+		<input
+			name="telephone number"
+			type="tel"
+			pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+			autocorrect="on"
+			required
+		/>
 	</div>
 	<div class="tattoo">
 		<label for="description"> Please describe your design idea: </label>
 		<textarea placeholder="Skull with a snake" name="description" rows="4" cols="50" />
 		<label for="location of tattoo"> Location of tattoo: </label>
 		<select name="location of tattoo">
-			<option value="volvo">Head</option>
-			<option value="saab">Saab</option>
-			<option value="opel">Opel</option>
-			<option value="audi">Audi</option>
+			<option value="Head">Head</option>
+			<option value="Throat/Neck">Throat/Neck</option>
+			<option value="Arms">Arms</option>
+			<option value="Hands">Hands</option>
+			<option value="Torso">Torso</option>
+			<option value="Thigh">Thigh</option>
+			<option value="Legs">Legs</option>
+			<option value="Feet">Feet</option>
 		</select>
 		<label for="size of tattoo"> Size: </label>
 		<select name="size of tattoo" id="size">
@@ -46,8 +59,11 @@
 			<option value="Chest">Chest Piece</option>
 			<option value="Torso">Whole Front/Back Torso</option>
 		</select>
-		<label for="color"> Color: </label>
-		<input name="color" type="checkbox" />
+		<class class="color">
+			<label for="color"> Color: </label>
+			<input name="color" type="checkbox" />
+		</class>
+
 		<label for="references"> Upload any references: </label>
 		<input name="references" type="file" multiple />
 		<label for="misc"> Anything else you want me to know: </label>
@@ -67,10 +83,18 @@
 		margin-top: 30px;
 	}
 	label {
+		margin-top: 10px;
 		display: flex;
 		flex-direction: column;
 	}
 	div {
 		padding: 5px;
+	}
+	small {
+		font-size: 0.6em;
+	}
+	.color {
+		display: flex;
+		align-items: flex-end;
 	}
 </style>

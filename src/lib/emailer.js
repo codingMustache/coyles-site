@@ -20,13 +20,9 @@ export const emailer = async (msg, attachments) => {
   const info = await transporter.sendMail({
     // @ts-ignore
     from: 'Jorge <jorge@codingMustache.dev>',
-    to: "erniepthethrid@gmail.com",
+    to: "test@codingmustache.dev",
     subject: "New Client",
-    //text: "Hello world?", // plain text body
     html: msg,
     attachments: attachments
   });
-
-  console.log("Message sent: %s", info.messageId);
-
 }
