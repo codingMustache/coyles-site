@@ -19,8 +19,8 @@ export const emailer = async (msg, attachments) => {
   // send mail with defined transport object
   const info = await transporter.sendMail({
     // @ts-ignore
-    from: 'Jorge <jorge@codingMustache.dev>',
-    to: "test@codingmustache.dev",
+    from: `Coyle Parker <appt@coyleparker.art>`,
+    to: "contact@coyleparker.art",
     subject: "New Client",
     html: msg,
     attachments: attachments

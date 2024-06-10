@@ -23,28 +23,13 @@
 			Phone #:
 			<small>Format: 555-555-5555</small>
 		</label>
-		<input
-			name="telephone number"
-			type="tel"
-			pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-			autocorrect="on"
-			required
-		/>
+		<input name="telephone number" type="tel" autocorrect="on" />
 	</div>
 	<div class="tattoo">
 		<label for="description"> Please describe your design idea: </label>
 		<textarea placeholder="Skull with a snake" name="description" rows="4" cols="50" />
 		<label for="location of tattoo"> Location of tattoo: </label>
-		<select name="location of tattoo">
-			<option value="Head">Head</option>
-			<option value="Throat/Neck">Throat/Neck</option>
-			<option value="Arms">Arms</option>
-			<option value="Hands">Hands</option>
-			<option value="Torso">Torso</option>
-			<option value="Thigh">Thigh</option>
-			<option value="Legs">Legs</option>
-			<option value="Feet">Feet</option>
-		</select>
+		<input type="text" name="location of tattoo" />
 		<label for="size of tattoo"> Size: </label>
 		<select name="size of tattoo" id="size">
 			<option value=">1">less than 1 inch"</option>
@@ -55,7 +40,6 @@
 			<option value="<10">over 10 inches</option>
 			<option value="1/2 Sleeve">Half Sleeve/Leg</option>
 			<option value="Sleeve">Whole Sleeve/Leg</option>
-			<option value="Chest">Chest Piece</option>
 			<option value="Chest">Chest Piece</option>
 			<option value="Torso">Whole Front/Back Torso</option>
 		</select>
@@ -96,5 +80,15 @@
 	.color {
 		display: flex;
 		align-items: flex-end;
+	}
+	input {
+		padding: 3px;
+		border-radius: 3px;
+		border: 1px solid rgb(157, 157, 157);
+	}
+	textarea {
+		width: 300px;
+		height: 100px;
+		resize: none;
 	}
 </style>
