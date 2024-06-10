@@ -19,10 +19,7 @@
 		<input name="last name" type="text" />
 		<label for="email"> Email: </label>
 		<input name="email" type="email" />
-		<label for="telephone number">
-			Phone #:
-			<small>Format: 555-555-5555</small>
-		</label>
+		<label for="telephone number"> Phone #: </label>
 		<input name="telephone number" type="tel" autocorrect="on" />
 	</div>
 	<div class="tattoo">
