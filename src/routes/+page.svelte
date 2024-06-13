@@ -24,12 +24,24 @@
 			<a href="#bio">
 				<p>Bio</p>
 			</a>
-			<a href="/contact">
-				<p>Contact</p>
+			<a id="book" href="/contact">
+				<button>Book an Appointment</button>
 			</a>
 		</nav>
 	</section>
-	<section>
+	<section id="portfolio">
+		<img src="coyle.jpeg" alt="" />
+		<img src="coyle.jpeg" alt="" />
+		<img src="coyle.jpeg" alt="" />
+		<img src="coyle.jpeg" alt="" />
+		<img src="coyle.jpeg" alt="" />
+		<img src="coyle.jpeg" alt="" />
+		<img src="coyle.jpeg" alt="" />
+		<img src="coyle.jpeg" alt="" />
+		<img src="coyle.jpeg" alt="" />
+		<img src="coyle.jpeg" alt="" />
+	</section>
+	<section id="bio">
 		<p>
 			Hi there! I'm Coyle Parker, a passionate tattoo artist hailing from Portland, now creating
 			unique and memorable tattoos at Lucky Dagger in the vibrant city of New Orleans. My journey in
@@ -47,16 +59,10 @@
 			passion for tattooing is matched only by my love for the stories behind each tattoo. Looking
 			forward to meeting you and creating something amazing together!
 		</p>
-		<div class="page-content" id="bio">
-			<img src="/image.png" alt="coyle parker head shot" />
-			<div class="links">
-				<a id="book" href="/contact">
-					<button>Book an Appointment</button>
-				</a>
-			</div>
-		</div>
+
+		<img src="/image.png" alt="coyle parker head shot" />
 	</section>
-	<section>
+	<section id="footer">
 		<a href="https://www.instagram.com/coyle_parker_?igsh=Nm1hemFxc294ZDJv">
 			<button> <IG /> </button>
 		</a>
@@ -71,12 +77,13 @@
 		position: sticky;
 		top: 0;
 		background-color: white;
+		z-index: 1;
 	}
 	nav {
 		display: flex;
 		justify-content: space-evenly;
 		align-items: center;
-		padding: 10px;
+		padding: 5px;
 		height: 10vh;
 	}
 	#header {
@@ -98,6 +105,26 @@
 		width: fit-content;
 		font-size: 15vw;
 		text-shadow: 0px 0px 10px black;
+	}
+	#portfolio {
+		margin: 10vh 50px;
+		width: 80%;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		grid-gap: 20px;
+	}
+	#portfolio img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+		aspect-ratio: 1/1;
+		border-radius: 5px;
+		margin: 0 auto;
+		transition: 300ms;
+	}
+	#portfolio img:hover {
+		transform: scale(1.1);
+		filter: unset;
 	}
 	#header p {
 		margin: 0 auto;
@@ -123,42 +150,29 @@
 		filter: sepia();
 	}
 	main {
-		/* background: #0000 center / cover no-repeat url('/coyle.jpeg'); */
-		background-color: rgb(82, 91, 98);
 		flex-direction: column;
 		width: 100vw;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
-	.page-content {
-		background-color: rgb(0, 0, 0);
-		text-align: center;
-		padding: 5px;
-		font-size: larger;
-		color: rgb(157, 154, 154);
-		border-radius: 5px;
-	}
-	.links button {
+	#bio {
 		display: flex;
+		width: 80%;
 		align-items: center;
-		margin: 10px;
-		padding: 5px;
-		gap: 10px;
-		border-radius: 100%;
-		border: unset;
-		color: white;
-		min-height: 30px;
-		background-color: rgb(90, 142, 255);
+		justify-content: space-around;
+		padding: 20px;
 	}
-	.links {
+	#bio p {
+		width: 60%;
+		line-height: 1.5;
+	}
+	#footer {
 		display: flex;
-
+		justify-content: space-evenly;
+		height: 10vh;
 		align-items: center;
-		justify-content: center;
-	}
-	p {
-		max-width: 300px;
+		width: 100vw;
 	}
 	#book button {
 		background-color: transparent;

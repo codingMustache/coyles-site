@@ -135,6 +135,9 @@ table {
 }
 
 html {
-  background-color: black;
   overflow-x: hidden;
+}
+
+a {
+  text-decoration: unset;
 }
