@@ -42,7 +42,8 @@
 		</select>
 		<class class="color">
 			<label for="color"> Color: </label>
-			<input name="color" type="checkbox" />
+			<input name="color" type="radio" />
+			<input name="black/grey" type="radio" />
 		</class>
 
 		<label for="references"> Upload any references: </label>
@@ -62,6 +63,7 @@
 		max-width: 80%;
 		margin: 0 auto;
 		margin-top: 30px;
+		color: white;
 	}
 	label {
 		margin-top: 10px;
