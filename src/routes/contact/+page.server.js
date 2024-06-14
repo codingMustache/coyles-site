@@ -1,6 +1,6 @@
-import { emailer } from '$lib/emailer.js'
-import { imgParser } from '$lib/imgParser';
-import { msgParser } from '$lib/msgParser';
+import { emailer } from '$lib/nodemailer/emailer'
+import { imgParser } from '$lib/nodemailer/imgParser';
+import { msgParser } from '$lib/nodemailer/msgParser';
 
 export const actions = {
 
