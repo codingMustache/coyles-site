@@ -1,10 +1,12 @@
 <script>
-	import '../reset.css';
+	import '$lib/styles/reset.css';
+	import '$lib/styles/global.css';
 	import PortfolioList from '$lib/components/portfolio-list.svelte';
 	import NavBar from '$lib/components/nav-bar.svelte';
 	import Bio from '$lib/components/bio.svelte';
 	import HeaderHero from '$lib/components/header-hero.svelte';
 	import ReviewList from '$lib/components/review-list.svelte';
+	import Footer from '$lib/components/footer.svelte';
 </script>
 
 <main>
@@ -23,7 +25,7 @@
 	<section id="reviews">
 		<ReviewList />
 	</section>
-	<section id="footer">this is the footer</section>
+	<section id="footer"><Footer /></section>
 </main>
 
 <style>

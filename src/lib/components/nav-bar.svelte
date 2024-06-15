@@ -26,8 +26,4 @@
 		height: 10vh;
 		transition: 300ms;
 	}
-	a:hover {
-		font-weight: bold;
-		scale: 1.1;
-	}
 </style>

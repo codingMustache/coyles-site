@@ -1,5 +1,5 @@
 <script>
-	import HeadShot from '$lib/images/headshot-cutout.png';
+	import headShot from '$lib/images/headshot-cutout.png';
 </script>
 
 <div id="bio">
@@ -21,7 +21,7 @@
 		creating something amazing together!
 	</p>
 
-	<img src="/image.png" alt="coyle parker head shot" />
+	<img src={headShot} alt="coyle parker head shot" />
 </div>
 
 <style>

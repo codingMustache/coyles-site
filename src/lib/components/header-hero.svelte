@@ -23,13 +23,12 @@
 	}
 	#header h1 {
 		margin: 0 auto;
+		text-align: center;
 		font-weight: 800;
 		color: #797164;
-		-webkit-text-stroke-width: 2px;
-		-webkit-text-stroke-color: #303020;
 		width: fit-content;
 		font-size: 15vw;
-		text-shadow: 0px 0px 10px black;
+		text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.572);
 	}
 
 	#header p {
@@ -38,6 +37,7 @@
 		color: white;
 		width: fit-content;
 		font-size: 4vw;
+		font-family: pathway, 'Courier New', Courier, monospace;
 	}
 	#header-img {
 		box-shadow: 1px 1px 10px 50px black inset;
