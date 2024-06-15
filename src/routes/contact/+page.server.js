@@ -6,7 +6,7 @@ export const actions = {
 
   /**
   * @description: Contact form submission
-  @param requet {Request}
+  * @param requet {Request}
   */
   // @ts-ignore
   contact: async ({ request }) => {
