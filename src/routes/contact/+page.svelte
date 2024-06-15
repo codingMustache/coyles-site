@@ -1,5 +1,5 @@
 <a href="/">
-	<p>Home</p>
+	<p class="home">Home</p>
 </a>
 <h2>Contact Form</h2>
 
@@ -40,14 +40,20 @@
 			<option value="Chest">Chest Piece</option>
 			<option value="Torso">Whole Front/Back Torso</option>
 		</select>
-		<class class="color">
-			<label for="color"> Color: </label>
-			<input name="color" type="radio" />
-			<input name="black/grey" type="radio" />
-		</class>
+		<div class="color">
+			<p>Color Option:</p>
+			<div class="color-option">
+				<input name="color" type="radio" value="Full Color" />
+				<label for="color"> Color </label>
+			</div>
+			<div class="color-option">
+				<input name="color" type="radio" value="Black/Grey" />
+				<label for="color"> Black and Grey </label>
+			</div>
+		</div>
 
 		<label for="references"> Upload any references: </label>
-		<input name="references" type="file" multiple />
+		<input id="files" name="references" type="file" multiple />
 		<label for="misc"> Anything else you want me to know: </label>
 		<textarea placeholder="" name="misc" rows="4" cols="50" />
 	</div>
@@ -58,36 +64,62 @@
 <style>
 	h2 {
 		text-align: center;
+		font-size: 2em;
 	}
 	form {
 		max-width: 80%;
 		margin: 0 auto;
 		margin-top: 30px;
-		color: white;
+		display: flex;
+		flex-direction: column;
+		width: fit-content;
 	}
 	label {
 		margin-top: 10px;
 		display: flex;
 		flex-direction: column;
 	}
-	div {
+	.customer,
+	.tattoo {
 		padding: 5px;
 	}
-	small {
-		font-size: 0.6em;
+	.color-option {
+		display: flex;
+		align-items: end;
 	}
 	.color {
 		display: flex;
-		align-items: flex-end;
+		flex-direction: column;
+		margin: 20px 0;
 	}
-	input {
-		padding: 3px;
-		border-radius: 3px;
+	input:not([type='file']) {
+		padding: 5px;
+		border-radius: 5px;
+
 		border: 1px solid rgb(157, 157, 157);
 	}
 	textarea {
 		width: 300px;
 		height: 100px;
 		resize: none;
+	}
+	button {
+		background-color: transparent;
+		border: 1px solid #dddddd;
+		padding: 10px;
+		border-radius: 5px;
+		color: #dddddd;
+		transition: 500ms;
+		margin-bottom: 10px;
+		background-color: #363a5b;
+		align-self: flex-end;
+		margin-top: 10px;
+	}
+	button:hover {
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+		scale: 1.1;
+	}
+	.home {
+		margin: 20px;
 	}
 </style>
