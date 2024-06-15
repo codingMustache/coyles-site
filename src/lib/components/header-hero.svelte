@@ -17,7 +17,7 @@
 	}
 	#header div {
 		position: absolute;
-		top: 30%;
+		top: 20%;
 		width: 100%;
 		z-index: 1;
 	}
