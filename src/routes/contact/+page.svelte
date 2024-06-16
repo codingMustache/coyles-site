@@ -1,7 +1,16 @@
 <script>
 	import FormModal from '$lib/components/form-modal.svelte';
 	import Footer from '$lib/components/footer.svelte';
+	import img from '$lib/images/headshot.jpeg';
 </script>
+
+<svelte:head>
+	<title>Coyle Parker</title>
+	<meta property="og:title" content="For your next tattoo book with Colye Parker" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content={img} />
+	<meta property="og:url" content="https://www.coyleparker.art/contact" />
+</svelte:head>
 
 <dialog open={false}>test</dialog>
 
