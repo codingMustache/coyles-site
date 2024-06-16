@@ -1,5 +1,6 @@
 <script>
 	import img from '$lib/images/heads.gif';
+
 </script>
 
 <div id="header">

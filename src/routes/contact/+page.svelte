@@ -1,5 +1,6 @@
 <script>
 	import FormModal from '$lib/components/form-modal.svelte';
+	import Footer from '$lib/components/footer.svelte';
 </script>
 
 <dialog open={false}>test</dialog>
@@ -71,6 +72,7 @@
 		<button type="submit">Submit</button>
 	</form>
 </div>
+<Footer />
 
 <style>
 	.page-content {
@@ -154,11 +156,11 @@
 		justify-self: end;
 	}
 	@media (max-width: 768px) {
-    .page-content {
-      flex-direction: column;
-    }
-    aside {
-      width: 100%;
-    }
-  }
+		.page-content {
+			flex-direction: column;
+		}
+		aside {
+			width: 100%;
+		}
+	}
 </style>

@@ -29,6 +29,10 @@
 	div {
 		display: flex;
 		gap: 10px;
+		align-items: center;
+		justify-content: center;
+		padding: 10px;
+		margin-bottom: 10px;
 	}
 	svg {
 		height: 20px;

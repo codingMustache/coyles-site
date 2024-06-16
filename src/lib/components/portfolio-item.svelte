@@ -20,4 +20,9 @@
 		transform: scale(1.1);
 		filter: unset;
 	}
+	@media (max-width: 768px) {
+		img:hover {
+			transform: scale(1.05);
+		}
+	}
 </style>
