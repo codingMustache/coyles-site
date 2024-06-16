@@ -153,4 +153,12 @@
 	.name label {
 		justify-self: end;
 	}
+	@media (max-width: 768px) {
+    .page-content {
+      flex-direction: column;
+    }
+    aside {
+      width: 100%;
+    }
+  }
 </style>
