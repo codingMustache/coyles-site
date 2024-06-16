@@ -1,4 +1,5 @@
 <script>
+	import { inject } from '@vercel/analytics';
 	import '$lib/styles/reset.css';
 	import '$lib/styles/global.css';
 	import PortfolioList from '$lib/components/portfolio-list.svelte';
@@ -8,6 +9,7 @@
 	import ReviewList from '$lib/components/review-list.svelte';
 	import Footer from '$lib/components/footer.svelte';
 	import img from '$lib/images/headshot.jpeg';
+	inject();
 </script>
 
 <svelte:head>
