@@ -7,7 +7,16 @@
 	import HeaderHero from '$lib/components/header-hero.svelte';
 	import ReviewList from '$lib/components/review-list.svelte';
 	import Footer from '$lib/components/footer.svelte';
+	import img from '$lib/images/headshot.jpeg';
 </script>
+
+<svelte:head>
+	<title>Coyle Parker</title>
+	<meta property="og:title" content="Coyle Parker - Tattoo Artist - Portfolio and Booking site" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content={img} />
+	<meta property="og:url" content="https://www.coyleparker.art" />
+</svelte:head>
 
 <main>
 	<section id="header">
