@@ -50,6 +50,7 @@
 			text-align: center;
 		}
 		img {
+			object-fit: cover;
 			width: 100%;
 			height: auto;
 			margin-top: 50px;
