@@ -46,4 +46,7 @@
 		height: 90vh;
 		border-radius: 0;
 	}
+	img {
+		filter: grayscale();
+	}
 </style>

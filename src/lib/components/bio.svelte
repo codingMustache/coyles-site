@@ -39,7 +39,7 @@
 		width: auto;
 		height: 500px;
 		border-radius: 5px;
-		filter: sepia();
+		filter: grayscale(100%);
 	}
 	@media (max-width: 768px) {
 		#bio {
