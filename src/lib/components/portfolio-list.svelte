@@ -1,11 +1,12 @@
 <script>
 	import PortfolioItem from '$lib/components/portfolio-item.svelte';
+	import portfolioItems from '$lib/images/portfolio/index';
 	import headshot from '$lib/images/headshot.jpeg';
 	const imgs = Array(10).fill(headshot);
 </script>
 
 <div id="photo-grid">
-	{#each imgs as img}
+	{#each portfolioItems as img}
 		<PortfolioItem {img} />
 	{/each}
 </div>
