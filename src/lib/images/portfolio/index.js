@@ -17,9 +17,10 @@ import img16 from './img-16.webp';
 import img17 from './img-17.webp';
 import img18 from './img-18.webp';
 import img19 from './img-19.webp';
+import img20 from './img-20.webp';
 
 
-const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19]
+const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20]
 
 const randomImages = new Set();
 while (randomImages.size < 10) {
