@@ -3,7 +3,7 @@
 	export let img;
 </script>
 
-<img src={img} alt="portfolio item" />
+<img src={img} alt="portfolio item" width="100px" height="100px" />
 
 <style>
 	img {

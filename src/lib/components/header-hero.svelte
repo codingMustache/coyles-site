@@ -1,6 +1,5 @@
 <script>
 	import img from '$lib/images/heads.gif';
-
 </script>
 
 <div id="header">
@@ -8,7 +7,14 @@
 		<h1>Coyle Parker</h1>
 		<p>Tattoo Artist</p>
 	</div>
-	<img src={img} alt="background spooky gif" id="header-img" />
+	<img
+		src={img}
+		alt="background spooky gif"
+		id="header-img"
+		loading="lazy"
+		width="100px"
+		height="100px"
+	/>
 </div>
 
 <style>
