@@ -9,6 +9,7 @@
 	import ReviewList from '$lib/components/review-list.svelte';
 	import Footer from '$lib/components/footer.svelte';
 	import img from '$lib/images/headshot.jpeg';
+	import images from '$lib/images/portfolio/index';
 	inject();
 </script>
 
@@ -16,7 +17,7 @@
 	<title>Coyle Parker</title>
 	<meta property="og:title" content="Coyle Parker - Tattoo Artist - Portfolio and Booking site" />
 	<meta property="og:type" content="website" />
-	<meta property="og:image" content={img} />
+	<meta property="og:image" content={images[0]} />
 	<meta property="og:url" content="https://www.coyleparker.art" />
 </svelte:head>
 

@@ -13,13 +13,13 @@
 		aspect-ratio: 1/1;
 		border-radius: 5px;
 		margin: 0 auto;
-		transition: 300ms;
+		transition: 500ms;
 		filter: grayscale(100%);
 	}
 	img:hover {
 		transform: scale(1.3);
 		filter: unset;
-		box-shadow: 0 0 50px #000000;
+		box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
 		z-index: 4;
 	}
 	@media (max-width: 768px) {
