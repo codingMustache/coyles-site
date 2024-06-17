@@ -32,19 +32,19 @@
 	<section id="nav">
 		<NavBar />
 	</section>
-	<img src={img}  alt="Coyle tattooing someone" width="100px" height="100px"/>
+	<img src={img} alt="Coyle tattooing someone" width="100px" height="100px" />
 	<section id="portfolio">
 		<PortfolioList />
 	</section>
-	<img src={img1}  alt="close up on Coyle tattooing someone" width="100px" height="100px"/>
+	<img src={img1} alt="close up on Coyle tattooing someone" width="100px" height="100px" />
 	<section id="bio">
 		<Bio />
 	</section>
-	<img src={img2} alt="Coyle tattooing someone" width="100px" height="100px"/>
+	<img src={img2} alt="Coyle tattooing someone" width="100px" height="100px" />
 	<section id="reviews">
 		<ReviewList />
 	</section>
-	<img src={img3} alt="construction site" width="100px" height="100px"/>
+	<img src={img3} alt="construction site" width="100px" height="100px" />
 	<section id="footer"><Footer /></section>
 </main>
 
@@ -78,7 +78,7 @@
 	}
 	main {
 		flex-direction: column;
-		width: 100vw;
+		width: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: center;

@@ -134,10 +134,6 @@ table {
   border-spacing: 0;
 }
 
-html {
-  overflow-x: hidden;
-}
-
 a {
   text-decoration: unset;
 }

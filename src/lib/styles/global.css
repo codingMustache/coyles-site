@@ -1,57 +1,78 @@
 @font-face {
-    font-family: inter-black;
-    src: url(../fonts/Inter-Black.ttf);
-}
-@font-face {
-    font-family: inter-bold;
-    src: url(../fonts/Inter-Bold.ttf);
-}
-@font-face {
-    font-family: inter-extrabold;
-    src: url(../fonts/Inter-ExtraBold.ttf);
-}
-@font-face {
-    font-family: inter-extralight;
-    src: url(../fonts/Inter-ExtraLight.ttf);
-}
-@font-face {
-    font-family: inter-light;
-    src: url(../fonts/Inter-Light.ttf);
-}
-@font-face {
-    font-family: inter-med;
-    src: url(../fonts/Inter-Medium.ttf);
-}
-@font-face {
-    font-family: inter-reg;
-    src: url(../fonts/Inter-Regular.ttf);
-}
-@font-face {
-    font-family: inter-semibold;
-    src: url(../fonts/Inter-SemiBold.ttf);
-}
-@font-face {
-    font-family: inter-light;
-    src: url(../fonts/Inter-Light.ttf);
-}
-@font-face {
-    font-family: lunates;
-    src: url(../fonts/Lunates.otf);
-}
-@font-face {
-    font-family: pathway;
-    src: url(../fonts/PathwayGothicOne-Regular.ttf);
+  font-family: inter-black;
+  src: url(../fonts/Inter-Black.ttf);
 }
 
-h1{
-    font-family:lunates,'Courier New', Courier, monospace ;
+@font-face {
+  font-family: inter-bold;
+  src: url(../fonts/Inter-Bold.ttf);
 }
-p, label, li{
-    font-family: inter-light, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+@font-face {
+  font-family: inter-extrabold;
+  src: url(../fonts/Inter-ExtraBold.ttf);
 }
-button{
-    font-family: inter-black, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+@font-face {
+  font-family: inter-extralight;
+  src: url(../fonts/Inter-ExtraLight.ttf);
 }
-h2{
-    font-family: pathway;
+
+@font-face {
+  font-family: inter-light;
+  src: url(../fonts/Inter-Light.ttf);
+}
+
+@font-face {
+  font-family: inter-med;
+  src: url(../fonts/Inter-Medium.ttf);
+}
+
+@font-face {
+  font-family: inter-reg;
+  src: url(../fonts/Inter-Regular.ttf);
+}
+
+@font-face {
+  font-family: inter-semibold;
+  src: url(../fonts/Inter-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: inter-light;
+  src: url(../fonts/Inter-Light.ttf);
+}
+
+@font-face {
+  font-family: lunates;
+  src: url(../fonts/Lunates.otf);
+}
+
+@font-face {
+  font-family: pathway;
+  src: url(../fonts/PathwayGothicOne-Regular.ttf);
+}
+
+html,
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: lunates, 'Courier New', Courier, monospace;
+}
+
+p,
+label,
+li {
+  font-family: inter-light, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+button {
+  font-family: inter-black, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  font-family: pathway;
 }
