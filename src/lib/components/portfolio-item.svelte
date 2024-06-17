@@ -17,8 +17,10 @@
 		filter: grayscale(100%);
 	}
 	img:hover {
-		transform: scale(1.1);
+		transform: scale(1.3);
 		filter: unset;
+		box-shadow: 0 0 50px #000000;
+		z-index: 4;
 	}
 	@media (max-width: 768px) {
 		img:hover {
