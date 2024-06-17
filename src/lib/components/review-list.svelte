@@ -1,17 +1,21 @@
 <script>
 	import headshot from '$lib/images/headshot.jpeg';
+	import jorge from '$lib/images/reviewers/img1.webp';
 	const reviews = [
 		{
 			name: 'Jorge Carvajal',
-			review: 'Very good service, I would recommend it to anyone.'
+			review: 'Very good service, I would recommend it to anyone.',
+			img: jorge
 		},
 		{
 			name: 'John Doe',
-			review: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
+			review: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+			img: headshot
 		},
 		{
 			name: 'Jane Doe',
-			review: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
+			review: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+			img: headshot
 		}
 	];
 </script>
@@ -23,9 +27,9 @@
 				{review.name}
 			</h3>
 			<p>
-				{review.review}
+				"{review.review}"
 			</p>
-			<img src={headshot} alt="" />
+			<img src={review.img} alt="" />
 		</div>
 	{/each}
 </div>
