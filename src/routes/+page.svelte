@@ -53,7 +53,7 @@
 		width: 100%;
 		position: sticky;
 		top: 0;
-		z-index: 1;
+		z-index: 5;
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 	}
 
@@ -62,7 +62,6 @@
 		position: absolute;
 		width: 100%;
 	}
-
 	section {
 		width: 100%;
 		background-color: white;
@@ -91,11 +90,5 @@
 		height: 10vh;
 		align-items: center;
 		width: 100vw;
-	}
-	@media (max-width: 700px) {
-		section {
-			width: 90%;
-			margin: 0 auto;
-		}
 	}
 </style>

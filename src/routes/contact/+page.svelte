@@ -20,9 +20,7 @@
 </a>
 <h2>Contact Form</h2>
 <div class="page-content">
-	<aside>
-		<FormModal />
-	</aside>
+	<FormModal />
 	<ContactForm />
 </div>
 <Footer />
@@ -38,11 +36,9 @@
 		display: flex;
 		width: 90%;
 		margin: 0 auto;
+		height: 90vh;
 	}
-	aside {
-		width: 25%;
-		margin-top: 50px;
-	}
+
 	h2 {
 		margin-top: 50px;
 		text-align: center;
@@ -56,9 +52,6 @@
 	@media (max-width: 768px) {
 		.page-content {
 			flex-direction: column;
-		}
-		aside {
-			width: 100%;
 		}
 	}
 </style>

@@ -51,8 +51,9 @@
 		}
 		img {
 			object-fit: cover;
+			object-position: center top;
 			width: 100%;
-			height: auto;
+			height: 600px;
 			margin-top: 50px;
 		}
 	}

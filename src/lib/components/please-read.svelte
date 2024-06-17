@@ -39,4 +39,9 @@
 		font-family: inter-semibold, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
 			'Lucida Sans', Arial, sans-serif;
 	}
+	div {
+		max-width: 500px;
+		margin: 0 auto;
+		padding: 20px;
+	}
 </style>

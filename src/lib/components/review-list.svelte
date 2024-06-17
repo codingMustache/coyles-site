@@ -36,20 +36,23 @@
 
 <style>
 	#review-list {
-		display: flex;
-		flex-wrap: wrap;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
 		align-items: center;
 		justify-content: center;
-		width: 100%;
+		margin: 0 auto;
+		gap: 30px;
+		width: 90%;
+		padding: 20px;
 	}
 
 	#review-card {
 		display: flex;
 		flex-direction: column;
-		gap: 20px;
-		padding: 30px;
-		width: 300px;
-		margin: 10px;
+		height: 200px;
+		justify-content: space-between;
+		width: 100%;
+		padding: 10px;
 		border-radius: 5px;
 		box-shadow: 0px 0px 10px 1px rgba(200, 200, 200, 0.7);
 	}
@@ -64,7 +67,10 @@
 		margin: 0;
 		font-weight: bold;
 	}
-	@media (max-width: 600px) {
+	@media (max-width: 768px) {
+		#review-list {
+			grid-template-columns: 1fr;
+		}
 		#review-card {
 			width: 90%;
 		}
