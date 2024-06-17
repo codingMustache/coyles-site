@@ -22,7 +22,7 @@
 		align-items: center;
 		justify-content: flex-end;
 		gap: 20px;
-		padding: 5px;
+		padding: 0 20px;
 		height: 10vh;
 		transition: 300ms;
 	}

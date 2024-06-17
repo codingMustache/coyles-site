@@ -9,9 +9,14 @@
 	import ReviewList from '$lib/components/review-list.svelte';
 	import Footer from '$lib/components/footer.svelte';
 	import img from '$lib/images/seperators/img-8.webp';
+	import img1 from '$lib/images/seperators/img-2.webp';
+	import img2 from '$lib/images/seperators/img-7.webp';
+	import img3 from '$lib/images/seperators/img-3.webp';
 	inject();
+	let scrollY = 0;
 </script>
 
+<svelte:window bind:scrollY />
 <svelte:head>
 	<title>Coyle Parker</title>
 	<meta property="og:title" content="Coyle Parker - Tattoo Artist - Portfolio and Booking site" />
@@ -27,24 +32,29 @@
 	<section id="nav">
 		<NavBar />
 	</section>
+	<img src={img} alt="" />
 	<section id="portfolio">
 		<PortfolioList />
 	</section>
+	<img src={img1} alt="" />
 	<section id="bio">
 		<Bio />
 	</section>
+	<img src={img2} alt="" />
 	<section id="reviews">
 		<ReviewList />
 	</section>
+	<img src={img3} alt="" />
 	<section id="footer"><Footer /></section>
 </main>
 
 <style>
 	#nav {
-		width: 90%;
+		width: 100%;
 		position: sticky;
 		top: 0;
 		z-index: 1;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 	}
 
 	#header {
@@ -54,9 +64,19 @@
 	}
 
 	section {
-		width: 80%;
+		width: 100%;
+		background-color: white;
+		box-shadow: 1px 1px 50px 10px black;
 	}
-
+	img {
+		width: 100%;
+		height: 300px;
+		object-fit: cover;
+		z-index: -2;
+		position: -webkit-sticky; /* Safari */
+		position: sticky;
+		top: 0;
+	}
 	main {
 		flex-direction: column;
 		width: 100vw;

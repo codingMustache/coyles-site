@@ -13,12 +13,11 @@
 
 <style>
 	#photo-grid {
-		margin: 10vh auto;
-		width: 100%;
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
 		grid-template-rows: repeat(2, auto);
 		gap: 10px;
+		padding: 20px 50px;
 	}
 	@media (max-width: 768px) {
 		#photo-grid {
