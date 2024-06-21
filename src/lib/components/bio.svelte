@@ -25,7 +25,7 @@
 	}
 	p {
 		width: 60%;
-		line-height: 1.5;
+		line-height: 2.5;
 	}
 	img {
 		width: auto;
