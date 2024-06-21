@@ -22,9 +22,6 @@ import img20 from './img-20.webp';
 
 const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20]
 
-const randomImages = new Set();
-while (randomImages.size < 10) {
-  randomImages.add(images[Math.floor(Math.random() * images.length)]);
-}
 
-export default [...randomImages];
+
+export default images;

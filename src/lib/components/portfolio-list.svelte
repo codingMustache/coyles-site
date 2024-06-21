@@ -1,8 +1,7 @@
 <script>
 	import PortfolioItem from '$lib/components/portfolio-item.svelte';
 	import portfolioItems from '$lib/images/portfolio/index';
-	import headshot from '$lib/images/headshot.jpeg';
-	const imgs = Array(10).fill(headshot);
+	let portfolioItems = portfolioItems.slice(0, 10);
 </script>
 
 <div id="photo-grid">
