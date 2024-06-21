@@ -40,8 +40,8 @@
 			'Lucida Sans', Arial, sans-serif;
 	}
 	div {
-		max-width: 500px;
-		margin: 0 auto;
+		width: 50%;
 		padding: 20px;
+		max-width: 500px;
 	}
 </style>

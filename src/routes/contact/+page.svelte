@@ -34,9 +34,10 @@
 	}
 	.page-content {
 		display: flex;
-		width: 90%;
+		justify-content: center;
+		gap: 20px;
+		min-height: 90vh;
 		margin: 0 auto;
-		height: 90vh;
 	}
 
 	h2 {
@@ -49,9 +50,10 @@
 		margin: 20px;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1100px) {
 		.page-content {
 			flex-direction: column;
+			align-items: center;
 		}
 	}
 </style>

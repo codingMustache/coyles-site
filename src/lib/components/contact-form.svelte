@@ -59,8 +59,8 @@
 
 <style>
 	form {
-		max-width: 80%;
-		margin: 0 auto;
+		min-width: 500px;
+		width: 50%;
 		margin-top: 30px;
 		display: flex;
 		flex-direction: column;
@@ -82,6 +82,7 @@
 	.color {
 		display: flex;
 		flex-direction: column;
+		margin: 20px 0;
 	}
 	.color p {
 		margin-bottom: 0;
@@ -89,14 +90,16 @@
 	input:not([type='file']) {
 		padding: 5px;
 		border-radius: 5px;
-
 		border: 1px solid rgb(157, 157, 157);
 	}
 	textarea {
-		width: 300px;
+		width: 100%;
 		height: 100px;
 		resize: none;
 		border-radius: 5px;
+	}
+	#files {
+		margin-bottom: 20px;
 	}
 	button {
 		background-color: transparent;
