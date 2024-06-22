@@ -50,7 +50,7 @@
 		box-shadow: 1px 1px 10px 50px black inset;
 		object-fit: cover;
 		width: 100%;
-		height: 90vh;
+		height: 100vh;
 		border-radius: 0;
 	}
 	img {

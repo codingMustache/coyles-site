@@ -1,16 +1,15 @@
 <a id="book" href="/contact">
-	<button>Book an Appointment</button>
+	<button>BOOK NOW</button>
 </a>
 
 <style>
 	button {
 		background-color: transparent;
-		border: 1px solid #dddddd;
+		border: none;
 		padding: 10px;
-		border-radius: 5px;
+		/* border-radius: 5px; */
 		color: #dddddd;
 		transition: 500ms;
-		margin-bottom: 10px;
 		background-color: #363a5b;
 	}
 	button:hover {

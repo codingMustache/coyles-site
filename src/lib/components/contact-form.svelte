@@ -59,7 +59,6 @@
 
 <style>
 	form {
-		min-width: 500px;
 		width: 50%;
 		margin-top: 30px;
 		display: flex;

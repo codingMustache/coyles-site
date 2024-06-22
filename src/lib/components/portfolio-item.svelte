@@ -1,9 +1,19 @@
 <script>
 	/**@type {string} */
 	export let img;
+	let open = false;
+	function closeDialog() {
+		open = !open;
+	}
 </script>
 
-<img src={img} alt="portfolio item" width="100px" height="100px" />
+<div on:click={closeDialog}>
+	<img src={img} alt="portfolio item" width="100px" height="100px" />
+	<dialog {open}>
+		tes akjshdlkjahslakjshdt
+		<button on:click={closeDialog}>x</button>
+	</dialog>
+</div>
 
 <style>
 	img {
@@ -14,17 +24,13 @@
 		border-radius: 5px;
 		margin: 0 auto;
 		transition: 500ms;
-		filter: grayscale(100%);
 	}
-	img:hover {
-		transform: scale(1.3);
-		filter: unset;
-		box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-		z-index: 4;
-	}
-	@media (max-width: 768px) {
-		img:hover {
-			transform: scale(1.05);
-		}
+	dialog {
+		position: absolute;
+		width: 90vw;
+		height: 90vh;
+		top: 0;
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index: 10;
 	}
 </style>

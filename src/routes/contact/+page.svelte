@@ -7,17 +7,12 @@
 
 <svelte:head>
 	<title>Coyle Parker</title>
-	<meta property="og:title" content="For your next tattoo book with Colye Parker" />
+	<meta property="og:title" content="For your next tattoo book with Coyle Parker" />
 	<meta property="og:type" content="website" />
 	<meta property="og:image" content={img} />
 	<meta property="og:url" content="https://www.coyleparker.art/contact" />
 </svelte:head>
 
-<dialog open={false}>test</dialog>
-
-<a href="/">
-	<p class="home">Home</p>
-</a>
 <h2>Contact Form</h2>
 <div class="page-content">
 	<FormModal />
@@ -44,10 +39,6 @@
 		margin-top: 50px;
 		text-align: center;
 		font-size: 2em;
-	}
-
-	.home {
-		margin: 20px;
 	}
 
 	@media (max-width: 1100px) {

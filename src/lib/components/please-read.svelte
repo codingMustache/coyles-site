@@ -1,5 +1,5 @@
 <script>
-	import img from '$lib/images/seperators/img-7.webp';
+	import img from '$lib/images/separators/img-7.webp';
 </script>
 
 <div>
@@ -29,9 +29,16 @@
 		width: 100%;
 		height: 300px;
 		border-radius: 10px;
+		margin: 10px auto;
+	}
+	ul {
+		margin: 20px 0;
 	}
 	li {
-		margin: 10px 0;
+		list-style-type: disc;
+		line-height: 2;
+		width: 70%;
+		margin: 0 auto;
 	}
 	h3 {
 		margin-bottom: 5px;
@@ -43,5 +50,11 @@
 		width: 50%;
 		padding: 20px;
 		max-width: 500px;
+		line-height: 1.5;
+	}
+	@media (max-width: 768px) {
+		div {
+			width: 90%;
+		}
 	}
 </style>

@@ -1,22 +1,16 @@
 <script>
-	import { inject } from '@vercel/analytics';
-	import '$lib/styles/reset.css';
-	import '$lib/styles/global.css';
 	import PortfolioList from '$lib/components/portfolio-list.svelte';
-	import NavBar from '$lib/components/nav-bar.svelte';
+
 	import Bio from '$lib/components/bio.svelte';
 	import HeaderHero from '$lib/components/header-hero.svelte';
 	import ReviewList from '$lib/components/review-list.svelte';
 	import Footer from '$lib/components/footer.svelte';
-	import img from '$lib/images/seperators/img-8.webp';
-	import img1 from '$lib/images/seperators/img-2.webp';
-	import img2 from '$lib/images/seperators/img-7.webp';
-	import img3 from '$lib/images/seperators/img-3.webp';
-	inject();
-	let scrollY = 0;
+	import img from '$lib/images/separators/img-8.webp';
+	import img1 from '$lib/images/separators/img-2.webp';
+	import img2 from '$lib/images/separators/img-7.webp';
+	import img3 from '$lib/images/separators/img-3.webp';
 </script>
 
-<svelte:window bind:scrollY />
 <svelte:head>
 	<title>Coyle Parker</title>
 	<meta property="og:title" content="Coyle Parker - Tattoo Artist - Portfolio and Booking site" />
@@ -28,9 +22,7 @@
 <section id="header">
 	<HeaderHero />
 </section>
-<section id="nav">
-	<NavBar />
-</section>
+
 <img src={img} alt="Coyle tattooing someone" width="100px" height="100px" />
 <section id="portfolio">
 	<PortfolioList />
@@ -47,16 +39,6 @@
 <section id="footer"><Footer /></section>
 
 <style>
-	#nav {
-		display: block;
-		position: sticky;
-		position: -webkit-sticky;
-		top: 0;
-		width: 100%;
-		z-index: 5;
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-	}
-
 	#header {
 		display: contents;
 		position: absolute;
