@@ -101,18 +101,21 @@
 	}
 	button {
 		background-color: transparent;
-		border: 1px solid #dddddd;
 		padding: 10px;
-		border-radius: 5px;
+
 		color: #dddddd;
 		transition: 500ms;
 		margin-bottom: 10px;
 		background-color: #363a5b;
 		align-self: flex-end;
 		margin-top: 10px;
+		font-family: inter-extralight;
+		border: none;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 	}
 	button:hover {
 		scale: 0.95;
+		box-shadow: none;
 	}
 	.name {
 		margin: 10px;
@@ -123,5 +126,10 @@
 	}
 	.name label {
 		justify-self: end;
+	}
+	@media (max-width: 768px) {
+		button {
+			font-size: x-large;
+		}
 	}
 </style>

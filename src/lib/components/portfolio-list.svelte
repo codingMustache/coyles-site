@@ -3,10 +3,10 @@
 	import portfolioItems from '$lib/images/portfolio/index';
 
 	let portfolioArr = portfolioItems.slice(0, 9);
-	$: portfolioArr;
 	let currentPage = 0;
 	const pageSize = 9;
-	$: isRotating = false;
+	let isRotating = false;
+
 	function getNextPage() {
 		isRotating = true;
 		let start = currentPage * pageSize;
@@ -22,18 +22,61 @@
 		currentPage = (currentPage + 1) % Math.ceil(portfolioItems.length / pageSize);
 		setTimeout(() => (isRotating = false), 1200);
 	}
+
+	// State to track which image is currently open in the dialog
+	/**
+	 * @type {string |null}
+	 */
+	let activeImage = null;
+
+	const openDialog = (/** @type {string | null} */ img) => (activeImage = img);
+
+	const closeDialog = () => (activeImage = null);
 </script>
 
 <div id="photo-grid">
 	{#each portfolioArr as img}
-		<div class="imgs" class:rotate={isRotating}>
+		<button
+			class="imgs"
+			class:rotate={isRotating}
+			on:click={() => openDialog(img)}
+			aria-label="Open Dialog"
+			type="button"
+		>
 			<PortfolioItem {img} />
-		</div>
+		</button>
 	{/each}
-	<button on:click={getNextPage}>Load More</button>
+	<button id="load-more" on:click={getNextPage}>Load More</button>
 </div>
 
+{#if activeImage}
+	<button class="dialog" on:click={closeDialog} aria-label="Close Dialog" type="button">
+		<img src={activeImage} alt="enlarged portfolio item" />
+	</button>
+{/if}
+
 <style>
+	#load-more {
+		border: 1px solid #ccc;
+	}
+	.dialog {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background: white;
+		border: 1px solid #ccc;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		z-index: 100;
+		height: fit-content;
+		width: 90vw;
+		overflow: auto;
+		padding: 20px;
+	}
+	.dialog img {
+		width: 100%;
+		height: auto;
+	}
 	#photo-grid {
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
@@ -48,6 +91,7 @@
 		border-radius: 5px;
 		font-size: 1rem;
 		cursor: pointer;
+		border: none;
 	}
 
 	.imgs {
