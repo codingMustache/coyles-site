@@ -10,6 +10,14 @@
 
 <NavBar />
 
-<slot />
+<main>
+	<slot />
+</main>
 
 <Footer />
+
+<style>
+	main {
+		margin-top: 10vh;
+	}
+</style>

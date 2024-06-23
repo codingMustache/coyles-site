@@ -44,6 +44,7 @@
 		padding: 0 20px;
 		z-index: 10;
 		height: 10vh;
+		font-size: x-large;
 		box-sizing: border-box;
 	}
 
