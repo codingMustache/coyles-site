@@ -42,7 +42,7 @@
 		top: 0;
 		width: 100%;
 		padding: 0 20px;
-		z-index: 10;
+		z-index: 20;
 		height: 10vh;
 		font-size: x-large;
 		box-sizing: border-box;
