@@ -112,6 +112,8 @@
 		#photo-grid {
 			grid-template-columns: repeat(2, 1fr);
 			grid-template-rows: repeat(5, auto);
+			width: 100%;
+			padding: 0px;
 		}
 	}
 
