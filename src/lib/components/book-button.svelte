@@ -4,7 +4,6 @@
 
 <style>
 	button {
-		background-color: transparent;
 		border: none;
 		padding: 20px;
 		color: #dddddd;

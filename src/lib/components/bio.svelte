@@ -42,7 +42,7 @@
 		}
 		img {
 			object-fit: cover;
-			object-position: center -150px;
+			object-position: center 25%;
 			width: 100%;
 			height: 400px;
 			margin-top: 20px;
