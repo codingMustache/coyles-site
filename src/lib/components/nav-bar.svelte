@@ -15,6 +15,7 @@
 		<a href="#bio">
 			<p>Bio</p>
 		</a>
+		<BookButton />
 	{/if}
 </nav>
 
@@ -23,14 +24,14 @@
 		background-color: rgb(255, 255, 255);
 		display: flex;
 		align-items: center;
-		justify-content: flex-end;
-		gap: 20px;
-		padding: 30px;
-		transition: 300ms;
+		justify-content: space-around;
 		position: fixed;
 		top: 0;
 		width: 100%;
+		left: 0;
+		font-size: large;
 		z-index: 10;
-		right: 0;
+		gap: 20px;
+		height: 10vh;
 	}
 </style>

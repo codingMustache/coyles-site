@@ -53,12 +53,7 @@
   src: url(../fonts/PathwayGothicOne-Regular.ttf);
 }
 
-html,
-body
-{
-width: 100vw;
-overflow-x: hidden;
-}
+
 
 h1 {
   font-family: lunates, 'Courier New', Courier, monospace;

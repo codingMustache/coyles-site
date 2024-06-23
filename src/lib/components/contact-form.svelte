@@ -59,14 +59,13 @@
 
 <style>
 	form {
-		width: 50%;
+		width: 100%;
 		margin-top: 30px;
 		display: flex;
 		flex-direction: column;
 		width: fit-content;
 	}
 	label {
-		margin-top: 10px;
 		display: flex;
 		flex-direction: column;
 	}
@@ -119,7 +118,7 @@
 		margin: 10px;
 		display: grid;
 		grid-template-columns: auto 1fr;
-		grid-gap: 10px 5px;
+		grid-gap: 20px 5px;
 		align-items: center;
 	}
 	.name label {

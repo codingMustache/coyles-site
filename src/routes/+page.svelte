@@ -4,7 +4,7 @@
 	import Bio from '$lib/components/bio.svelte';
 	import HeaderHero from '$lib/components/header-hero.svelte';
 	import ReviewList from '$lib/components/review-list.svelte';
-	import Footer from '$lib/components/footer.svelte';
+
 	import img from '$lib/images/separators/img-8.webp';
 	import img1 from '$lib/images/separators/img-2.webp';
 	import img2 from '$lib/images/separators/img-7.webp';
@@ -19,51 +19,40 @@
 	<meta property="og:url" content="https://www.coyleparker.art" />
 </svelte:head>
 
-<section id="header">
-	<HeaderHero />
-</section>
-
-<img src={img} alt="Coyle tattooing someone" width="100px" height="100px" />
-<section id="portfolio">
-	<PortfolioList />
-</section>
-<img src={img1} alt="close up on Coyle tattooing someone" width="100px" height="100px" />
-<section id="bio">
-	<Bio />
-</section>
-<img src={img2} alt="Coyle tattooing someone" width="100px" height="100px" />
-<section id="reviews">
-	<ReviewList />
-</section>
-<img src={img3} alt="construction site" width="100px" height="100px" />
-<section id="footer"><Footer /></section>
+<div id="home-page-content">
+	<section id="header">
+		<HeaderHero />
+	</section>
+	<img src={img} alt="Coyle tattooing someone" width="100px" height="100px" />
+	<section id="portfolio">
+		<PortfolioList />
+	</section>
+	<img src={img1} alt="close up on Coyle tattooing someone" width="100px" height="100px" />
+	<section id="bio">
+		<Bio />
+	</section>
+	<img src={img2} alt="Coyle tattooing someone" width="100px" height="100px" />
+	<section id="reviews">
+		<ReviewList />
+	</section>
+	<img src={img3} alt="construction site" width="100px" height="100px" />
+</div>
 
 <style>
-	#header {
-		display: contents;
-		position: absolute;
+	#home-page-content {
+		scroll-snap-type: y mandatory;
 		width: 100%;
+		display: flex;
+		flex-direction: column;
 	}
+
 	section {
-		width: 100%;
-		background-color: white;
-		box-shadow: 1px 1px 50px 10px black;
+		scroll-snap-align: start;
 	}
+
 	img {
 		width: 100%;
 		height: 300px;
 		object-fit: cover;
-		z-index: -2;
-		position: -webkit-sticky; /* Safari */
-		position: sticky;
-		top: 0;
-	}
-
-	#footer {
-		display: flex;
-		justify-content: space-evenly;
-		height: 10vh;
-		align-items: center;
-		width: 100vw;
 	}
 </style>

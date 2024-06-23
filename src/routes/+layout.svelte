@@ -4,21 +4,14 @@
 	import '$lib/styles/global.css';
 	import NavBar from '$lib/components/nav-bar.svelte';
 	import BookButton from '$lib/components/book-button.svelte';
+	import Footer from '$lib/components/footer.svelte';
 	inject();
 </script>
 
 <NavBar />
 
-<div class="book-btn">
-	<BookButton />
-</div>
 <slot />
+<Footer />
 
 <style>
-	.book-btn {
-		position: fixed;
-		top: 95%;
-		right: 5%;
-		z-index: 10;
-	}
 </style>

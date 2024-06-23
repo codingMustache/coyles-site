@@ -25,7 +25,7 @@
 	#header div {
 		position: absolute;
 		top: 20%;
-		width: 100%;
+
 		z-index: 1;
 	}
 	#header h1 {
