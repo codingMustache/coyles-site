@@ -3,8 +3,9 @@
 	import '$lib/styles/reset.css';
 	import '$lib/styles/global.css';
 	import NavBar from '$lib/components/nav-bar.svelte';
-	import BookButton from '$lib/components/book-button.svelte';
+
 	import Footer from '$lib/components/footer.svelte';
+
 	inject();
 </script>
 

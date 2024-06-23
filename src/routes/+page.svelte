@@ -40,14 +40,9 @@
 
 <style>
 	#home-page-content {
-		scroll-snap-type: y mandatory;
 		width: 100%;
 		display: flex;
 		flex-direction: column;
-	}
-
-	section {
-		scroll-snap-align: start;
 	}
 
 	img {

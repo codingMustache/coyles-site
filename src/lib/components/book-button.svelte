@@ -6,11 +6,10 @@
 	button {
 		background-color: transparent;
 		border: none;
-		padding: 25px;
+		padding: 20px;
 		color: #dddddd;
 		transition: 500ms;
 		background-color: #363a5b;
-
 		font-size: large;
 		font-family: inter-extralight;
 	}
@@ -18,5 +17,11 @@
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 		scale: 1.1;
 		font-family: inter-light;
+	}
+	@media (max-width: 768px) {
+		button {
+			padding: 10px;
+			font-size: medium;
+		}
 	}
 </style>

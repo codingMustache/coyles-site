@@ -1,5 +1,5 @@
 <script>
-	import headShot from '$lib/images/headshot-cutout.png';
+	import headshot from '$lib/images/headshot.jpeg';
 </script>
 
 <div id="bio">
@@ -13,7 +13,7 @@
 		a tattoo artist.
 	</p>
 
-	<img src={headShot} alt="coyle parker head shot" />
+	<img src={headshot} alt="coyle parker head shot" />
 </div>
 
 <style>
@@ -31,7 +31,6 @@
 		width: auto;
 		height: 500px;
 		border-radius: 5px;
-		filter: grayscale(100%);
 	}
 	@media (max-width: 768px) {
 		#bio {
@@ -43,10 +42,10 @@
 		}
 		img {
 			object-fit: cover;
-			object-position: center top;
+			object-position: center -150px;
 			width: 100%;
-			height: 600px;
-			margin-top: 50px;
+			height: 400px;
+			margin-top: 20px;
 		}
 	}
 </style>
