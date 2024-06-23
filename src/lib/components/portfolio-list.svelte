@@ -66,15 +66,17 @@
 		transform: translate(-50%, -50%);
 		background: white;
 		border: 1px solid #ccc;
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 0 50px 50px rgba(0, 0, 0, 0.5);
 		z-index: 100;
 		height: fit-content;
+		max-height: 90vh;
 		width: 90vw;
 		overflow: auto;
 		padding: 20px;
 	}
 	.dialog img {
 		width: 100%;
+
 		height: auto;
 	}
 	#photo-grid {
