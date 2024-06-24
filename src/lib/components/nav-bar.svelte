@@ -70,7 +70,7 @@
 		background: rgba(255, 255, 255, 1);
 		padding: 20px;
 		box-sizing: border-box;
-		z-index: 9;
+		z-index: 100;
 	}
 
 	.open.menu {
