@@ -6,7 +6,7 @@
 
 <svelte:head>
 	<title>Coyle Parker</title>
-	<meta property="og:title" content="For your next tattoo book with Coyle Parker" />
+	<meta property="og:title" content="Book you next tattoo with Coyle Parker" />
 	<meta property="og:type" content="website" />
 	<meta property="og:image" content={img} />
 	<meta property="og:url" content="https://www.coyleparker.art/contact" />
