@@ -4,12 +4,22 @@ export default {
 	type: 'document',
 	fields: [
 		{
+			name: 'headerImage',
+			title: 'Header Image',
+			type: 'image',
+			fields: [
+				{
+					name: 'alt',
+					title: 'Alt Text',
+					type: 'string',
+					description: 'Important for SEO and accessibility'
+				}
+			]
+		},
+		{
 			name: 'topImage',
 			title: 'Top Image',
 			type: 'image',
-			options: {
-				hotspot: true
-			},
 			fields: [
 				{
 					name: 'alt',
@@ -23,9 +33,6 @@ export default {
 			name: 'middleImage',
 			title: 'Middle Image',
 			type: 'image',
-			options: {
-				hotspot: true
-			},
 			fields: [
 				{
 					name: 'alt',
@@ -39,9 +46,6 @@ export default {
 			name: 'bottomImage',
 			title: 'Bottom Image',
 			type: 'image',
-			options: {
-				hotspot: true
-			},
 			fields: [
 				{
 					name: 'alt',
@@ -52,5 +56,5 @@ export default {
 			]
 		}
 	],
-	__experimental_actions: ['update', 'publish', 'create', 'delete'] // "create"
+	__experimental_actions: ['update', 'publish', 'create'] // "create"
 };
