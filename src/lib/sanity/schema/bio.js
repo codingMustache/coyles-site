@@ -4,8 +4,9 @@ export default {
 	type: 'document',
 	fields: [
 		{
-			title: 'content',
+			title: 'Content',
 			name: 'content',
+			description: 'A short bio about the author',
 			type: 'array',
 			of: [{ type: 'block' }]
 		},

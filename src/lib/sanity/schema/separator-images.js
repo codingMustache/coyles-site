@@ -54,6 +54,19 @@ export default {
 					description: 'Important for SEO and accessibility'
 				}
 			]
+		},
+		{
+			name: 'bottomImage1',
+			title: 'Bottom Image1',
+			type: 'image',
+			fields: [
+				{
+					name: 'alt',
+					title: 'Alt Text',
+					type: 'string',
+					description: 'Important for SEO and accessibility'
+				}
+			]
 		}
 	],
 	__experimental_actions: ['update', 'publish', 'create'] // "create"

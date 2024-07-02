@@ -37,28 +37,27 @@ const singletonObj = {
 					.id('imageGroup')
 					.child(S.document().schemaType('imageGroup').documentId('imageGroup').title('Images'))
 					.icon(ImageRemoveIcon),
-				S.documentTypeListItem('blogs').title('Blogs').icon(ComposeIcon),
-				S.documentTypeListItem('portfolioImages').title('Portfolio Images').icon(ImagesIcon),
-				S.documentTypeListItem('reviews').title('Reviews').icon(StarIcon),
-
 				S.listItem()
 					.title('SEO')
 					.icon(SearchIcon)
 					.child(
 						S.list()
-							.title('SEO')
-							.id('seo')
+							.title('Pages')
+							.id('pages')
 							.items([
 								S.listItem()
 									.id('home')
 									.title('Home')
-									.child(S.document().schemaType('seo').documentId('home').title('Home')),
+									.child(S.document().schemaType('seo').documentId('home').title('Home Page')),
 								S.listItem()
 									.title('Contact')
 									.id('contact')
-									.child(S.document().schemaType('seo').documentId('contact').title('Contact'))
+									.child(S.document().schemaType('seo').documentId('contact').title('Contact Page'))
 							])
-					)
+					),
+				S.documentTypeListItem('blogs').title('Blogs').icon(ComposeIcon),
+				S.documentTypeListItem('portfolioImages').title('Portfolio Images').icon(ImagesIcon),
+				S.documentTypeListItem('reviews').title('Reviews').icon(StarIcon)
 			])
 };
 
