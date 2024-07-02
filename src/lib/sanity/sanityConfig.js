@@ -1,12 +1,20 @@
 import { defineConfig } from 'sanity';
 import { structureTool } from 'sanity/structure';
-import { UserIcon, ComposeIcon, ImagesIcon, ImageRemoveIcon, StarIcon } from '@sanity/icons';
+import {
+	UserIcon,
+	ComposeIcon,
+	ImagesIcon,
+	ImageRemoveIcon,
+	StarIcon,
+	SearchIcon
+} from '@sanity/icons';
 
 import blogPosts from './schema/blog-posts';
 import reviews from './schema/reviews';
 import bio from './schema/bio';
 import portfolioImages from './schema/portfolio-images';
 import separatorImages from './schema/separator-images';
+import seo from './schema/seo';
 
 // Define the singleton document types
 const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
@@ -31,7 +39,26 @@ const singletonObj = {
 					.icon(ImageRemoveIcon),
 				S.documentTypeListItem('blogs').title('Blogs').icon(ComposeIcon),
 				S.documentTypeListItem('portfolioImages').title('Portfolio Images').icon(ImagesIcon),
-				S.documentTypeListItem('reviews').title('Reviews').icon(StarIcon)
+				S.documentTypeListItem('reviews').title('Reviews').icon(StarIcon),
+
+				S.listItem()
+					.title('SEO')
+					.icon(SearchIcon)
+					.child(
+						S.list()
+							.title('SEO')
+							.id('seo')
+							.items([
+								S.listItem()
+									.id('home')
+									.title('Home')
+									.child(S.document().schemaType('seo').documentId('home').title('Home')),
+								S.listItem()
+									.title('Contact')
+									.id('contact')
+									.child(S.document().schemaType('seo').documentId('contact').title('Contact'))
+							])
+					)
 			])
 };
 
@@ -45,7 +72,7 @@ export default defineConfig({
 	plugins: [structureTool(singletonObj)],
 
 	schema: {
-		types: [blogPosts, reviews, bio, portfolioImages, separatorImages]
+		types: [blogPosts, reviews, bio, portfolioImages, separatorImages, seo]
 	},
 
 	document: {
