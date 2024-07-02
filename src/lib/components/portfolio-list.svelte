@@ -2,27 +2,6 @@
 	import PortfolioItem from '$lib/components/portfolio-item.svelte';
 	import portfolioItems from '$lib/images/portfolio/index';
 
-	let portfolioArr = portfolioItems.slice(0, 9);
-	let currentPage = 0;
-	const pageSize = 9;
-	let isRotating = false;
-
-	function getNextPage() {
-		isRotating = true;
-		let start = currentPage * pageSize;
-		let end = start + pageSize;
-		if (end > portfolioItems.length) {
-			portfolioArr = [
-				...portfolioItems.slice(start, portfolioItems.length),
-				...portfolioItems.slice(0, end % portfolioItems.length)
-			];
-		} else {
-			portfolioArr = portfolioItems.slice(start, end);
-		}
-		currentPage = (currentPage + 1) % Math.ceil(portfolioItems.length / pageSize);
-		setTimeout(() => (isRotating = false), 1200);
-	}
-
 	// State to track which image is currently open in the dialog
 	/**
 	 * @type {string |null}
@@ -35,18 +14,11 @@
 </script>
 
 <div id="photo-grid">
-	{#each portfolioArr as img}
-		<button
-			class="imgs"
-			class:rotate={isRotating}
-			on:click={() => openDialog(img)}
-			aria-label="Open Dialog"
-			type="button"
-		>
+	{#each portfolioItems as img}
+		<button class="imgs" on:click={() => openDialog(img)} aria-label="Open Dialog" type="button">
 			<PortfolioItem {img} />
 		</button>
 	{/each}
-	<button id="load-more" on:click={getNextPage}>Load More</button>
 </div>
 
 {#if activeImage}
@@ -81,10 +53,12 @@
 	}
 	#photo-grid {
 		display: grid;
-		grid-template-columns: repeat(5, 1fr);
-		grid-template-rows: repeat(2, auto);
+		grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+		grid-auto-rows: 150px;
 		gap: 10px;
-		padding: 20px 50px;
+		width: 100%;
+		overflow-x: auto;
+		white-space: nowrap;
 	}
 	button {
 		width: 100%;
@@ -116,32 +90,6 @@
 			grid-template-rows: repeat(5, auto);
 			width: 100%;
 			padding: 0px;
-		}
-	}
-
-	.rotate {
-		-webkit-animation: rotate 1s normal forwards;
-		animation: rotate 1s normal forwards;
-	}
-	@-webkit-keyframes rotate {
-		from {
-			-webkit-transform: translateX(0px) rotateY(0deg);
-			transform: translateX(0px) rotateY(0deg);
-		}
-		to {
-			-webkit-transform: translateX(0px) rotateY(360deg);
-			transform: translateX(0px) rotateY(360deg);
-		}
-	}
-
-	@keyframes rotate {
-		from {
-			-webkit-transform: translateX(0px) rotateY(0deg);
-			transform: translateX(0px) rotateY(0deg);
-		}
-		to {
-			-webkit-transform: translateX(0px) rotateY(360deg);
-			transform: translateX(0px) rotateY(360deg);
 		}
 	}
 </style>
