@@ -30,51 +30,57 @@
 {/if}
 
 <style>
+	.dialog::after {
+		background: black;
+	}
 	.dialog {
 		position: fixed;
-		top: 50%;
+		top: 55%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		background: white;
 		border: 1px solid #ccc;
 		box-shadow: 0 0 50px 50px rgba(0, 0, 0, 0.5);
 		z-index: 100;
-		height: fit-content;
-		max-height: 90vh;
-		width: 90vw;
+		height: 85vh;
+		width: 95vw;
 		overflow: auto;
 		padding: 20px;
 	}
 	.dialog img {
 		width: 100%;
-		height: auto;
+		height: 100%;
+		object-fit: cover;
+		aspect-ratio: 1/1;
 	}
 
 	.grid-container {
-		width: 95%;
+		width: 100%;
+		height: fit-content;
 		overflow-x: auto;
-		padding: 30px;
+		padding: 20px 0;
 	}
 
 	#photo-grid {
-		display: grid;
-		grid-template-rows: repeat(2, 1fr); /* Two rows */
-		grid-auto-columns: minmax(300px, 1fr); /* Columns adjust to fit content */
-		grid-auto-flow: column; /* Grid items will fill columns first */
-		gap: 10px;
+		display: flex;
+		flex-wrap: nowrap;
+		scroll-snap-type: x mandatory;
 	}
 
 	.imgs {
+		flex: 0 0 auto;
+		width: auto;
+		height: 70vh;
+		aspect-ratio: 1/1;
 		transition: 300ms;
 		filter: grayscale(100%);
-		width: 100%;
-		height: 100%;
 		object-fit: cover;
 		display: block;
+		scroll-snap-align: start;
 	}
 
 	.imgs:hover {
-		scale: 1.1;
+		transform: scale(0.97);
 		filter: grayscale(0);
 		z-index: 5;
 	}

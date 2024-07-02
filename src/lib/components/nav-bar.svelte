@@ -11,10 +11,12 @@
 
 <nav>
 	<a href="/">Home</a>
-	{#if $page.route.id == '/'}
+	{#if $page.route.id == '/(app)'}
 		<a href="#portfolio">Portfolio</a>
 		<a href="#bio">Bio</a>
-		<BookButton />
+		<a on:click={() => (isOpen = false)} id="book" href="/contact">
+			<button>BOOK NOW</button>
+		</a>
 	{/if}
 	<button class="hamburger" on:click={toggleMenu} aria-label="Toggle Menu">
 		<svg width="30" height="30" viewBox="0 0 30 30">
@@ -26,13 +28,29 @@
 </nav>
 <div class:open={isOpen} class="menu">
 	<a on:click={toggleMenu} href="/">Home</a>
-	{#if $page.route.id == '/'}
+	{#if $page.route.id == '/(app)'}
 		<a on:click={toggleMenu} href="#portfolio">Portfolio</a>
 		<a on:click={toggleMenu} href="#bio">Bio</a>
 	{/if}
 </div>
 
 <style>
+	button {
+		border: none;
+		cursor: pointer;
+		padding: 20px;
+		color: #dddddd;
+		transition: 200ms;
+		background-color: #363a5b;
+		font-size: large;
+		font-family: inter-extralight;
+	}
+	a button:hover {
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+		scale: 1.1;
+		font-family: inter-light;
+	}
+
 	nav {
 		background-color: #fff;
 		display: flex;
@@ -84,11 +102,16 @@
 	}
 
 	@media (max-width: 768px) {
-		nav > a,
-		nav > :global(BookButton) {
+		button {
+			font-size: medium;
+			padding: 20px;
+		}
+		nav > a {
 			display: none;
 		}
-
+		#book {
+			display: unset;
+		}
 		.menu a {
 			font-size: xx-large;
 		}
@@ -96,6 +119,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			justify-self: flex-end;
 			padding: 10px;
 			border-radius: 5px;
 			background: transparent;

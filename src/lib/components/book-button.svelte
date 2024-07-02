@@ -5,6 +5,7 @@
 <style>
 	button {
 		border: none;
+		cursor: pointer;
 		padding: 20px;
 		color: #dddddd;
 		transition: 500ms;
@@ -19,8 +20,8 @@
 	}
 	@media (max-width: 768px) {
 		button {
-			padding: 10px;
 			font-size: medium;
+			padding: 20px;
 		}
 	}
 </style>

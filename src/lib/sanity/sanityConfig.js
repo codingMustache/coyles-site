@@ -1,5 +1,36 @@
 import { defineConfig } from 'sanity';
 import { structureTool } from 'sanity/structure';
+import { UserIcon, ComposeIcon, ImagesIcon, ImageRemoveIcon } from '@sanity/icons';
+
+import blogPosts from './schema/blog-posts';
+import reviews from './schema/reviews';
+import bio from './schema/bio';
+import portfolioImages from './schema/portfolio-images';
+import separatorImages from './schema/separator-images';
+
+// Define the singleton document types
+
+const singletonObj = {
+	structure: (S) =>
+		S.list()
+			.title('Settings')
+			.items([
+				S.listItem()
+					.title('Bio')
+					.id('bio')
+					.child(S.document().schemaType('bio').documentId('bio').title('Bio'))
+					.icon(UserIcon),
+				S.listItem()
+					.title('Separator Images')
+					.id('imageGroup')
+					.child(
+						S.document().schemaType('imageGroup').documentId('imageGroup').title('Separator Images')
+					)
+					.icon(ImageRemoveIcon),
+				S.documentTypeListItem('blogs').title('Blogs').icon(ComposeIcon),
+				S.documentTypeListItem('portfolioImages').title('Portfolio Images').icon(ImagesIcon)
+			])
+};
 
 export default defineConfig({
 	name: 'default',
@@ -8,61 +39,9 @@ export default defineConfig({
 	projectId: 'mfxl6xft',
 	dataset: 'production',
 	basePath: '/admin',
-	plugins: [structureTool()],
+	plugins: [structureTool(singletonObj)],
 
 	schema: {
-		types: [
-			{
-				title: 'Portfolio Images',
-				name: 'portfolioImages',
-				type: 'document',
-				fields: [
-					{
-						title: 'Images',
-						name: 'image',
-						type: 'image'
-					},
-					{
-						title: 'Hidden Text',
-						description:
-							'This text will be hidden from the user but still accessible to screen readers and SEO',
-						name: 'hiddenText',
-						type: 'string'
-					}
-				]
-			},
-			{
-				title: 'Post',
-				name: 'post',
-				type: 'document',
-				fields: [
-					{
-						type: 'string',
-						name: 'title',
-						title: 'Title'
-					}
-				]
-			},
-			{
-				title: 'Poster',
-				name: 'poster',
-				type: 'image',
-				options: {
-					hotspot: true // <-- Defaults to false
-				},
-				fields: [
-					{
-						name: 'caption',
-						type: 'string',
-						title: 'Caption'
-					},
-					{
-						name: 'attribution',
-						type: 'string',
-						title: 'Attribution'
-					}
-				]
-			}
-		]
+		types: [blogPosts, reviews, bio, portfolioImages, separatorImages]
 	}
 });
