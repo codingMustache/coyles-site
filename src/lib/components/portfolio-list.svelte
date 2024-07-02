@@ -13,12 +13,14 @@
 	const closeDialog = () => (activeImage = null);
 </script>
 
-<div id="photo-grid">
-	{#each portfolioItems as img}
-		<button class="imgs" on:click={() => openDialog(img)} aria-label="Open Dialog" type="button">
-			<PortfolioItem {img} />
-		</button>
-	{/each}
+<div class="grid-container">
+	<div id="photo-grid">
+		{#each portfolioItems as img}
+			<button class="imgs" on:click={() => openDialog(img)} aria-label="Open Dialog" type="button">
+				<PortfolioItem {img} />
+			</button>
+		{/each}
+	</div>
 </div>
 
 {#if activeImage}
@@ -28,9 +30,6 @@
 {/if}
 
 <style>
-	#load-more {
-		border: 1px solid #ccc;
-	}
 	.dialog {
 		position: fixed;
 		top: 50%;
@@ -48,18 +47,38 @@
 	}
 	.dialog img {
 		width: 100%;
-
 		height: auto;
 	}
+
+	.grid-container {
+		width: 95%;
+		overflow-x: auto;
+		padding: 30px;
+	}
+
 	#photo-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-		grid-auto-rows: 150px;
+		grid-template-rows: repeat(2, 1fr); /* Two rows */
+		grid-auto-columns: minmax(300px, 1fr); /* Columns adjust to fit content */
+		grid-auto-flow: column; /* Grid items will fill columns first */
 		gap: 10px;
-		width: 100%;
-		overflow-x: auto;
-		white-space: nowrap;
 	}
+
+	.imgs {
+		transition: 300ms;
+		filter: grayscale(100%);
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	.imgs:hover {
+		scale: 1.1;
+		filter: grayscale(0);
+		z-index: 5;
+	}
+
 	button {
 		width: 100%;
 		background-color: rgb(255, 255, 255);
@@ -70,26 +89,9 @@
 		border: none;
 	}
 
-	.imgs {
-		transition: 300ms;
-		filter: grayscale(100%);
-	}
-
-	.imgs:hover {
-		scale: 1.1;
-		filter: grayscale(0);
-		z-index: 5;
-	}
-
 	@media (max-width: 768px) {
 		.imgs:hover {
 			scale: 1.05;
-		}
-		#photo-grid {
-			grid-template-columns: repeat(2, 1fr);
-			grid-template-rows: repeat(5, auto);
-			width: 100%;
-			padding: 0px;
 		}
 	}
 </style>
