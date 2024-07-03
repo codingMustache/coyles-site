@@ -24,7 +24,6 @@
 		gap: 20px;
 		min-height: 90vh;
 		width: 100%;
-		margin: auto 0;
 	}
 
 	@media (max-width: 1100px) {
