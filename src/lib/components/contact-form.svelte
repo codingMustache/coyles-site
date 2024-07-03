@@ -96,7 +96,7 @@
 	}
 	textarea {
 		width: 100%;
-		height: 100px;
+		height: 200px;
 		resize: none;
 		border-radius: 5px;
 	}
