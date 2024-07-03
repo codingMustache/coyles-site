@@ -69,6 +69,10 @@
 		display: flex;
 		flex-direction: column;
 	}
+	label,
+	input {
+		margin-top: 30px;
+	}
 	.customer,
 	.tattoo {
 		padding: 5px;

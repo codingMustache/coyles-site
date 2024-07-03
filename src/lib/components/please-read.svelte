@@ -50,7 +50,8 @@
 		width: 100%;
 		padding: 20px;
 		max-width: 500px;
-		line-height: 1.5;
+		line-height: 2;
+		font-size: larger;
 	}
 	@media (max-width: 768px) {
 		div {
