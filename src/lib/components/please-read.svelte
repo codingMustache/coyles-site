@@ -49,7 +49,7 @@
 	div {
 		width: 100%;
 		padding: 20px;
-		max-width: 500px;
+		max-width: 600px;
 		line-height: 2;
 		font-size: larger;
 	}

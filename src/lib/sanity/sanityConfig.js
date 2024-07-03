@@ -6,7 +6,8 @@ import {
 	ImagesIcon,
 	ImageRemoveIcon,
 	StarIcon,
-	SearchIcon
+	SearchIcon,
+	EarthGlobeIcon
 } from '@sanity/icons';
 
 import blogPosts from './schema/blog-posts';
@@ -48,10 +49,12 @@ const singletonObj = {
 								S.listItem()
 									.id('home')
 									.title('Home')
+									.icon(EarthGlobeIcon)
 									.child(S.document().schemaType('seo').documentId('home').title('Home Page')),
 								S.listItem()
 									.title('Contact')
 									.id('contact')
+									.icon(EarthGlobeIcon)
 									.child(S.document().schemaType('seo').documentId('contact').title('Contact Page'))
 							])
 					),
