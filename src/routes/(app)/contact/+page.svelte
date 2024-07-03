@@ -20,7 +20,7 @@
 <style>
 	div {
 		display: flex;
-		justify-content: center;
+		justify-content: space-around;
 		gap: 20px;
 		min-height: 90vh;
 		width: 100%;
