@@ -6,19 +6,18 @@
 	import HeaderHero from '$lib/components/header-hero.svelte';
 	import ReviewList from '$lib/components/review-list.svelte';
 
-	import img from '$lib/images/separators/img-8.webp';
-
 	export let data;
 	let headerImg = { img: data.images.headerImage, txt: data.images.headerImageTxt };
 	let portfolioItems = data.portfolioImages;
 	let bio = data.bio;
+	let reviews = data.reviews;
 </script>
 
 <svelte:head>
 	<title>Coyle Parker</title>
 	<meta property="og:title" content="Coyle Parker - Tattoo Artist - Portfolio and Booking site" />
 	<meta property="og:type" content="website" />
-	<meta property="og:image" content={img} />
+	<meta property="og:image" content={headerImg.img} />
 	<meta property="og:url" content="https://www.coyleparker.art" />
 </svelte:head>
 
@@ -27,12 +26,15 @@
 		<HeaderHero {headerImg} />
 	</section>
 
-	<img src={data.images.topImage} alt={data.images.topImageTxt} width="100px" height="100px" />
-
 	<section id="portfolio">
 		<PortfolioList {portfolioItems} />
 	</section>
 
+	<img src={data.images.topImage} alt={data.images.topImageTxt} width="100px" height="100px" />
+
+	<section id="bio">
+		<Bio {bio} />
+	</section>
 	<img
 		src={data.images.middleImage}
 		alt={data.images.middleImageTxt}
@@ -40,21 +42,15 @@
 		height="100px"
 	/>
 
-	<section id="bio">
-		<Bio {bio} />
+	<section id="reviews">
+		<ReviewList {reviews} />
 	</section>
-
 	<img
 		src={data.images.bottomImage}
 		alt={data.images.bottomImageTxt}
 		width="100px"
 		height="100px"
 	/>
-	<section id="reviews">
-		<ReviewList />
-	</section>
-
-	<img src={data.images.lastImg} alt={data.images.lastImgTxt} width="100px" height="100px" />
 </div>
 
 <style>
@@ -65,7 +61,6 @@
 	}
 	section {
 		background: white;
-		z-index: 10;
 	}
 	img {
 		position: sticky;

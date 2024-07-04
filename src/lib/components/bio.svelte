@@ -1,5 +1,4 @@
 <script>
-	import headshot from '$lib/images/headshot.jpeg';
 	export let bio;
 </script>
 
@@ -8,7 +7,7 @@
 		{bio.content}
 	</p>
 
-	<img src={bio.image} alt="coyle parker head shot" width="100px" height="100px" />
+	<img src={bio.image} alt={bio.hiddenText} width="100px" height="100px" />
 </div>
 
 <style>

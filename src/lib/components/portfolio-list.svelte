@@ -12,9 +12,15 @@
 	const openDialog = (/** @type {string | null} */ img) => (activeImage = img);
 
 	const closeDialog = () => (activeImage = null);
+	let scrollContainer;
+
+	const handleWheel = (e) => {
+		e.preventDefault();
+		scrollContainer.scrollLeft += e.deltaY;
+	};
 </script>
 
-<div class="scrollable">
+<div class="scrollable" bind:this={scrollContainer} on:wheel={handleWheel}>
 	<div id="photo-grid">
 		{#each portfolioItems as img}
 			<button class="imgs" on:click={() => openDialog(img)} aria-label="Open Dialog" type="button">
@@ -39,16 +45,15 @@
 		background: white;
 		border: 1px solid #ccc;
 		box-shadow: 0 0 50px 50px rgba(0, 0, 0, 0.5);
-		z-index: 100;
-		height: fit-content;
-		max-height: 90vh;
-		width: 90vw;
-		overflow: auto;
+		z-index: 40;
+		width: fit-content;
+
+		height: 90%;
 		padding: 20px;
 	}
 	.dialog img {
-		width: 100%;
-		height: auto;
+		width: auto;
+		height: 100%;
 	}
 
 	.scrollable {
@@ -77,15 +82,16 @@
 
 	.imgs:hover {
 		scale: 0.9;
-
 		filter: grayscale(0);
 		z-index: 5;
+	}
+	button {
+		padding: 3px;
 	}
 
 	button.imgs {
 		width: 100%;
 		background-color: rgb(255, 255, 255);
-		border: 1px solid rgb(0, 0, 0);
 		border-radius: 5px;
 		cursor: pointer;
 		border: none;

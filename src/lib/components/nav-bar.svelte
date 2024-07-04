@@ -1,6 +1,5 @@
 <script>
 	import { page } from '$app/stores';
-	import BookButton from './book-button.svelte';
 
 	let isOpen = false;
 
@@ -64,6 +63,7 @@
 		height: 10vh;
 		font-size: x-large;
 		box-sizing: border-box;
+		max-height: 100px;
 	}
 
 	nav a {

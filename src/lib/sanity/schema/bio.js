@@ -14,6 +14,11 @@ export default {
 			title: 'Image',
 			name: 'image',
 			type: 'image'
+		},
+		{
+			title: 'Hidden Text',
+			name: 'hiddenText',
+			type: 'string'
 		}
 	]
 };

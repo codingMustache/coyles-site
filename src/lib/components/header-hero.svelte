@@ -1,5 +1,4 @@
 <script>
-	import img from '$lib/images/heads.gif';
 	export let headerImg;
 </script>
 
@@ -25,17 +24,32 @@
 	}
 	#header div {
 		position: absolute;
-		top: 20%;
+		height: 100%;
 		z-index: 1;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
 	}
 	#header h1 {
 		margin: 0 auto;
 		text-align: center;
-		font-weight: 800;
-		color: #797164;
-		width: fit-content;
-		font-size: 15vw;
-		text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.572);
+		color: #ebebeb;
+		text-shadow:
+			-1px -1px rgb(0, 0, 0),
+			1px 1px rgb(0, 0, 0),
+			2px 2px rgb(0, 0, 0),
+			3px 3px rgb(0, 0, 0),
+			4px 4px rgb(0, 0, 0),
+			5px 5px rgb(0, 0, 0),
+			6px 6px rgb(0, 0, 0),
+			7px 7px rgb(0, 0, 0),
+			8px 8px rgb(0, 0, 0),
+			9px 9px rgb(0, 0, 0),
+			10px 10px rgb(0, 0, 0),
+			11px 11px rgb(0, 0, 0),
+			1px 1px 15px rgb(255, 255, 255);
+		font-size: 25rem;
 	}
 
 	#header p {
