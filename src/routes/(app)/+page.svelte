@@ -102,8 +102,8 @@
 		border: 2px solid white;
 		padding: 10px;
 		text-align: center;
-		width: 60px;
-		height: 30px;
+		width: 40px;
+		height: 40px;
 		border: unset;
 	}
 	.separator > a {

@@ -82,7 +82,7 @@
 		flex-direction: column;
 		align-items: flex-end;
 		position: fixed;
-		top: 10vh;
+		top: 80px;
 		left: 0;
 		width: 100%;
 		background: rgba(255, 255, 255, 1);
@@ -109,9 +109,10 @@
 		nav > a {
 			display: none;
 		}
-		#book {
-			display: unset;
+		nav {
+			justify-content: flex-end;
 		}
+
 		.menu a {
 			font-size: xx-large;
 		}
