@@ -11,6 +11,7 @@
 	export let data;
 	let headerImg = { img: data.images.headerImage, txt: data.images.headerImageTxt };
 	let portfolioItems = data.portfolioImages;
+	let bio = data.bio;
 </script>
 
 <svelte:head>
@@ -25,19 +26,24 @@
 	<section id="header">
 		<HeaderHero {headerImg} />
 	</section>
+
 	<img src={data.images.topImage} alt={data.images.topImageTxt} width="100px" height="100px" />
+
 	<section id="portfolio">
 		<PortfolioList {portfolioItems} />
 	</section>
+
 	<img
 		src={data.images.middleImage}
 		alt={data.images.middleImageTxt}
 		width="100px"
 		height="100px"
 	/>
+
 	<section id="bio">
-		<Bio {data} />
+		<Bio {bio} />
 	</section>
+
 	<img
 		src={data.images.bottomImage}
 		alt={data.images.bottomImageTxt}
@@ -47,6 +53,7 @@
 	<section id="reviews">
 		<ReviewList />
 	</section>
+
 	<img src={data.images.lastImg} alt={data.images.lastImgTxt} width="100px" height="100px" />
 </div>
 

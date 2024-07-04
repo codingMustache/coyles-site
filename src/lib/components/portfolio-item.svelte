@@ -10,11 +10,10 @@
 <style>
 	img {
 		object-fit: cover;
-		aspect-ratio: 1/1;
 		width: 100%;
-		height: auto;
+		height: 100%;
+		aspect-ratio: 1/1;
 		border-radius: 5px;
 		transition: 500ms;
-		display: block;
 	}
 </style>

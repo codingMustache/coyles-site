@@ -1,20 +1,14 @@
 <script>
 	import headshot from '$lib/images/headshot.jpeg';
-	export let data;
+	export let bio;
 </script>
 
 <div id="bio">
 	<p>
-		Driving past a brown house on the main strip in Redmond, OR Coyle (in child form) fantasized
-		about his career as an inventor. He grew up making plans to build wooden robots and attempted a
-		WWII replica out of Popsicle sticks. He later won best-looking car in the pine wood derby (with
-		a lot of help from his brother), and won a blue ribbon and $100 for best original artwork at the
-		Oregon State fair. The “grown up” version of Coyle never lost the desire to create something
-		from nothing and his vision came to life in New Orleans where he currently resides and works as
-		a tattoo artist.
+		{bio.content}
 	</p>
 
-	<img src={''} alt="coyle parker head shot" />
+	<img src={bio.image} alt="coyle parker head shot" width="100px" height="100px" />
 </div>
 
 <style>
@@ -27,6 +21,7 @@
 	p {
 		width: 60%;
 		line-height: 2.5;
+		font-size: large;
 	}
 	img {
 		width: auto;

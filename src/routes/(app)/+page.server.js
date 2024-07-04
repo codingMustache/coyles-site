@@ -31,10 +31,11 @@ export const load = async ({ params }) => {
 	const reviews = await client.fetch(
 		'*[_type == "reviews"]{title, name, review, "image": image.asset->url}'
 	);
-	console.log(portfolioImages);
+	console.log(bio);
 
 	return {
 		images,
-		portfolioImages
+		portfolioImages,
+		bio
 	};
 };
