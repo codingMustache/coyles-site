@@ -2,6 +2,8 @@
 	import FormModal from '$lib/components/please-read.svelte';
 
 	import ContactForm from '$lib/components/contact-form.svelte';
+
+	export let data;
 </script>
 
 <svelte:head>
@@ -12,7 +14,7 @@
 </svelte:head>
 
 <div>
-	<FormModal />
+	<FormModal {data} />
 	<ContactForm />
 </div>
 
@@ -23,6 +25,7 @@
 		gap: 20px;
 		min-height: 90vh;
 		width: 100%;
+		margin-top: 200px;
 	}
 
 	@media (max-width: 1100px) {

@@ -1,11 +1,4 @@
-import { createClient } from '@sanity/client';
-
-const client = createClient({
-	projectId: 'mfxl6xft',
-	dataset: 'production',
-	apiVersion: '2021-10-21',
-	useCdn: false
-});
+import client from '$lib/sanity/sanity-client';
 
 export const load = async ({ params }) => {
 	const bio = (

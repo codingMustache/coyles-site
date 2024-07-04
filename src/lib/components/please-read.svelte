@@ -1,5 +1,5 @@
 <script>
-	import img from '$lib/images/separators/img-7.webp';
+	export let data;
 </script>
 
 <div>
@@ -20,14 +20,14 @@
 		</li>
 		<li>I am not accepting new appointments at this time</li>
 	</ul>
-	<img src={img} alt="" />
+	<img src={data.image.img} alt={data.image.imgTxt} />
 </div>
 
 <style>
 	img {
 		object-fit: cover;
 		width: 100%;
-		height: 300px;
+		height: 700px;
 		border-radius: 3px;
 		margin: 10px auto;
 	}
