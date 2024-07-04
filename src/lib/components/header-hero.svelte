@@ -21,9 +21,11 @@
 	#header {
 		display: contents;
 		position: absolute;
+		width: 100%;
 	}
 	#header div {
 		position: absolute;
+		width: 100%;
 		height: 100%;
 		z-index: 1;
 		display: flex;
@@ -50,6 +52,7 @@
 			11px 11px rgb(0, 0, 0),
 			1px 1px 15px rgb(255, 255, 255);
 		font-size: 25rem;
+		width: 100%;
 	}
 
 	#header p {
@@ -69,5 +72,21 @@
 	}
 	img {
 		filter: grayscale();
+	}
+	@media (max-width: 900px) {
+		#header h1 {
+			font-size: 10rem;
+		}
+		#header p {
+			font-size: 2rem;
+		}
+	}
+	@media (max-width: 400px) {
+		#header h1 {
+			font-size: 5rem;
+		}
+		#header p {
+			font-size: 2rem;
+		}
 	}
 </style>
