@@ -73,15 +73,15 @@
 
 	@media (max-width: 900px) {
 		#header h1 {
-			font-size: 10rem;
+			font-size: 15rem;
 		}
 		#header p {
 			font-size: 2rem;
 		}
 	}
-	@media (max-width: 400px) {
+	@media (max-width: 600px) {
 		#header h1 {
-			font-size: 5rem;
+			font-size: 10rem;
 		}
 		#header p {
 			font-size: 2rem;
