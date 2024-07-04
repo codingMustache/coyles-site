@@ -64,7 +64,6 @@
 		font-family: pathway, 'Courier New', Courier, monospace;
 	}
 	#header-img {
-		box-shadow: 1px 1px 10px 50px black inset;
 		object-fit: cover;
 		width: 100%;
 		height: 100vh;
