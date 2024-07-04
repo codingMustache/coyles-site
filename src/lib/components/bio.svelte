@@ -1,5 +1,6 @@
 <script>
 	import headshot from '$lib/images/headshot.jpeg';
+	export let data;
 </script>
 
 <div id="bio">
@@ -13,7 +14,7 @@
 		a tattoo artist.
 	</p>
 
-	<img src={headshot} alt="coyle parker head shot" />
+	<img src={''} alt="coyle parker head shot" />
 </div>
 
 <style>

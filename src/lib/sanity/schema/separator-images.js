@@ -68,6 +68,5 @@ export default {
 				}
 			]
 		}
-	],
-	__experimental_actions: ['update', 'publish', 'create'] // "create"
+	]
 };

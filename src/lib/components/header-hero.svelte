@@ -1,5 +1,6 @@
 <script>
 	import img from '$lib/images/heads.gif';
+	export let headerImg;
 </script>
 
 <div id="header">
@@ -8,8 +9,8 @@
 		<p>Tattoo Artist</p>
 	</div>
 	<img
-		src={img}
-		alt="background spooky gif"
+		src={headerImg.img}
+		alt={headerImg.txt}
 		id="header-img"
 		loading="lazy"
 		width="100px"

@@ -1,8 +1,7 @@
 <script>
 	import PortfolioItem from '$lib/components/portfolio-item.svelte';
-	import portfolioItems from '$lib/images/portfolio/index';
 
-	// State to track which image is currently open in the dialog
+	export let portfolioItems;
 	/**
 	 * @type {string |null}
 	 */
@@ -13,7 +12,7 @@
 	const closeDialog = () => (activeImage = null);
 </script>
 
-<div class="grid-container">
+<div class="scrollable">
 	<div id="photo-grid">
 		{#each portfolioItems as img}
 			<button class="imgs" on:click={() => openDialog(img)} aria-label="Open Dialog" type="button">
@@ -25,14 +24,11 @@
 
 {#if activeImage}
 	<button class="dialog" on:click={closeDialog} aria-label="Close Dialog" type="button">
-		<img src={activeImage} alt="enlarged portfolio item" />
+		<img src={activeImage.image} alt="enlarged portfolio item" />
 	</button>
 {/if}
 
 <style>
-	.dialog::after {
-		background: black;
-	}
 	.dialog {
 		position: fixed;
 		top: 55%;
@@ -42,29 +38,32 @@
 		border: 1px solid #ccc;
 		box-shadow: 0 0 50px 50px rgba(0, 0, 0, 0.5);
 		z-index: 100;
-		height: 85vh;
+		height: fit-content;
 		width: 95vw;
-		overflow: auto;
-		padding: 20px;
+		padding: 10px;
+		max-height: unset;
 	}
 	.dialog img {
 		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		aspect-ratio: 1/1;
-	}
+		height: auto;
+		z-index: 101;
 
-	.grid-container {
+		border-radius: 5px;
+	}
+	.scrollable {
 		width: 100%;
-		height: fit-content;
 		overflow-x: auto;
-		padding: 20px 0;
+		white-space: nowrap;
+		padding: 10px;
+		box-sizing: border-box;
 	}
-
 	#photo-grid {
-		display: flex;
-		flex-wrap: nowrap;
-		scroll-snap-type: x mandatory;
+		display: inline-grid;
+		grid-template-rows: repeat(2, 1fr);
+		grid-auto-flow: column;
+		gap: 10px;
+		width: fit-content;
+		overflow: scroll;
 	}
 
 	.imgs {
@@ -86,13 +85,14 @@
 	}
 
 	button {
-		width: 100%;
 		background-color: rgb(255, 255, 255);
 		border: 1px solid rgb(0, 0, 0);
 		border-radius: 5px;
 		font-size: 1rem;
 		cursor: pointer;
 		border: none;
+		border-radius: 5px;
+		max-height: 40vw;
 	}
 
 	@media (max-width: 768px) {

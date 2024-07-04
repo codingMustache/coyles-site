@@ -1,4 +1,5 @@
 <script>
+	//import { portfolioItems } from '$lib/images/portfolio/index';
 	import PortfolioList from '$lib/components/portfolio-list.svelte';
 
 	import Bio from '$lib/components/bio.svelte';
@@ -6,9 +7,10 @@
 	import ReviewList from '$lib/components/review-list.svelte';
 
 	import img from '$lib/images/separators/img-8.webp';
-	import img1 from '$lib/images/separators/img-2.webp';
-	import img2 from '$lib/images/separators/img-7.webp';
-	import img3 from '$lib/images/separators/img-3.webp';
+
+	export let data;
+	let headerImg = { img: data.images.headerImage, txt: data.images.headerImageTxt };
+	let portfolioItems = data.portfolioImages;
 </script>
 
 <svelte:head>
@@ -21,21 +23,31 @@
 
 <div id="home-page-content">
 	<section id="header">
-		<HeaderHero />
+		<HeaderHero {headerImg} />
 	</section>
-	<img src={img} alt="Coyle tattooing someone" width="100px" height="100px" />
+	<img src={data.images.topImage} alt={data.images.topImageTxt} width="100px" height="100px" />
 	<section id="portfolio">
-		<PortfolioList />
+		<PortfolioList {portfolioItems} />
 	</section>
-	<img src={img1} alt="close up on Coyle tattooing someone" width="100px" height="100px" />
+	<img
+		src={data.images.middleImage}
+		alt={data.images.middleImageTxt}
+		width="100px"
+		height="100px"
+	/>
 	<section id="bio">
-		<Bio />
+		<Bio {data} />
 	</section>
-	<img src={img2} alt="Coyle tattooing someone" width="100px" height="100px" />
+	<img
+		src={data.images.bottomImage}
+		alt={data.images.bottomImageTxt}
+		width="100px"
+		height="100px"
+	/>
 	<section id="reviews">
 		<ReviewList />
 	</section>
-	<img src={img3} alt="construction site" width="100px" height="100px" />
+	<img src={data.images.lastImg} alt={data.images.lastImgTxt} width="100px" height="100px" />
 </div>
 
 <style>
