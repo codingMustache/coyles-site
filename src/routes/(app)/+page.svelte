@@ -86,7 +86,6 @@
 		padding: 20px;
 		text-align: center;
 		min-width: 200px;
-		backdrop-filter: blur(10px);
 		font-weight: bold;
 	}
 	.separator .content {
