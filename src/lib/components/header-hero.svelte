@@ -69,10 +69,9 @@
 		width: 100%;
 		height: 100vh;
 		border-radius: 0;
-	}
-	img {
 		filter: grayscale();
 	}
+
 	@media (max-width: 900px) {
 		#header h1 {
 			font-size: 10rem;

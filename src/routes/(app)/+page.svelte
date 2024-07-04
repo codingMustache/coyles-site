@@ -65,9 +65,9 @@
 	img {
 		position: sticky;
 		position: -webkit-sticky;
-		top: 10vh;
+		top: 0;
 		width: 100%;
-		height: 300px;
+		height: 400px;
 		object-fit: cover;
 		z-index: -1;
 	}

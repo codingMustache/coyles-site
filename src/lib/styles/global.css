@@ -71,3 +71,14 @@ button {
 h2 {
   font-family: pathway;
 }
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+*{
+  -ms-overflow-style: none;
+  
+  scrollbar-width: none;
+  
+}
