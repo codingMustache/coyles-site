@@ -13,9 +13,9 @@
 	{#if $page.route.id == '/(app)'}
 		<a href="#portfolio">Portfolio</a>
 		<a href="#bio">Bio</a>
-		<a on:click={() => (isOpen = false)} id="book" href="/contact">
+		<!-- <a on:click={() => (isOpen = false)} id="book" href="/contact">
 			<button>BOOK NOW</button>
-		</a>
+		</a> -->
 	{/if}
 	<button class="hamburger" on:click={toggleMenu} aria-label="Toggle Menu">
 		<svg width="30" height="30" viewBox="0 0 30 30">
@@ -44,17 +44,17 @@
 		font-size: large;
 		font-family: inter-extralight;
 	}
-	a button:hover {
+	/* a button:hover {
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 		scale: 1.1;
 		font-family: inter-light;
-	}
+	} */
 
 	nav {
 		background-color: #fff;
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: space-around;
 		position: fixed;
 		top: 0;
 		width: 100%;
