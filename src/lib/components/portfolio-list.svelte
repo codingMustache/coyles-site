@@ -46,14 +46,11 @@
 		border: 1px solid #ccc;
 		box-shadow: 0 0 50px 50px rgba(0, 0, 0, 0.5);
 		z-index: 40;
-		width: fit-content;
-
-		height: 90%;
+		width: 90%;
 		padding: 20px;
 	}
 	.dialog img {
-		width: auto;
-		height: 100%;
+		width: 100%;
 	}
 
 	.scrollable {
@@ -81,7 +78,7 @@
 	}
 
 	.imgs:hover {
-		scale: 0.9;
+		scale: 0.97;
 		filter: grayscale(0);
 		z-index: 5;
 	}
