@@ -45,20 +45,43 @@
 	<section id="reviews">
 		<ReviewList {reviews} />
 	</section>
-	<img
-		src={data.images.bottomImage}
-		alt={data.images.bottomImageTxt}
-		width="100px"
-		height="100px"
-	/>
+	<div class="bottom-separator">
+		<a
+			href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.google.com%2Fmaps%2Fapi%2Fjs%2FReviewsService.CrossOriginAuthSuccess%3Fpb%3D%211shttps%253A%252F%252Fwww.google.com%26key%3DAIzaSyAQiTKe3tivKXammrJ6ov6u8E7KwZPNFss&hl=en&ifkv=AS5LTAQEkz7vMps-9tlQ_gpLx4WC1sslF6D72zS4rGRLF_AVAsdeIonust2mDQRXIaMVYU4YjtYW&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S1879794338%3A1720126958113509&ddm=0"
+			>Write A Review</a
+		>
+		<img
+			src={data.images.bottomImage}
+			alt={data.images.bottomImageTxt}
+			width="100px"
+			height="100px"
+		/>
+	</div>
 </div>
 
 <style>
+	.bottom-separator {
+		display: inline-block;
+		position: relative;
+	}
+
+	.bottom-separator a {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: white;
+		font-size: x-large;
+		border: 2px solid white;
+		background-color: rgba(77, 77, 77, 0.404);
+		padding: 20px;
+	}
 	#home-page-content {
 		width: 100%;
 		display: flex;
 		flex-direction: column;
 	}
+
 	section {
 		background: white;
 	}
