@@ -19,6 +19,10 @@
 <svelte:head>
 	<title>Coyle Parker</title>
 	<meta property="og:title" content="Coyle Parker - Tattoo Artist - Portfolio and Booking site" />
+	<meta
+		name="description"
+		content="Coyle Parker A New Orleans Tattoo artist portfolio and booking page "
+	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:image" content={headerImg.img} />
 	<meta property="og:url" content="https://www.coyleparker.art" />
