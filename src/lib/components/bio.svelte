@@ -6,6 +6,7 @@
 	<p>
 		{bio.content}
 	</p>
+
 	<img src={bio.image} alt={bio.hiddenText} width="100px" height="100px" />
 </div>
 
