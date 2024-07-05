@@ -1,3 +1,17 @@
+<script>
+	import { CloseCircleIcon } from '@sanity/icons';
+	/**
+	 * @type {any[]}
+	 */
+	let photos = [];
+	$: photos;
+	const addPhotos = (/** @type any */ e) => {
+		//photos = Array.from(files);
+		const files = Array.from(e.target.files);
+		photos = files;
+	};
+</script>
+
 <form method="POST" action="?/contact" enctype="multipart/form-data">
 	<div class="customer">
 		<label for="pronouns"> Pronouns: </label>
@@ -48,9 +62,17 @@
 				<label for="color"> Black and Grey </label>
 			</div>
 		</div>
-
-		<label for="references"> Upload any references: </label>
-		<input id="files" name="references" type="file" multiple />
+		<div id="drop-zone">
+			<label for="references"> Click Or Drop Photos to upload references Here</label>
+			<input on:change={addPhotos} id="files" name="references" type="file" multiple />
+			<div class="thumbnail">
+				{#each photos as photo}
+					<div class="thumbnail-wrapper">
+						<img src={URL.createObjectURL(photo)} alt="Uploaded" />
+					</div>
+				{/each}
+			</div>
+		</div>
 		<label for="misc"> Anything else you want me to know: </label>
 		<textarea placeholder="" name="misc" rows="4" cols="50" />
 	</div>
@@ -58,12 +80,35 @@
 </form>
 
 <style>
+	.thumbnail {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		padding: 5px;
+	}
+	.thumbnail img {
+		width: 100px;
+		height: 100px;
+		object-fit: cover;
+	}
+	.thumbnail-wrapper {
+		width: 100px;
+		height: 100px;
+	}
+
+	select {
+		padding: 5px;
+		border-radius: 5px;
+
+		border: 1px solid rgb(157, 157, 157);
+		max-width: 400px;
+		font-size: large;
+	}
 	form {
 		width: 100%;
-		margin-top: 30px;
 		display: flex;
 		flex-direction: column;
-		width: fit-content;
+		padding: 20px;
 	}
 	label {
 		display: flex;
@@ -93,6 +138,7 @@
 		padding: 5px;
 		border-radius: 5px;
 		border: 1px solid rgb(157, 157, 157);
+		max-width: 400px;
 	}
 	textarea {
 		width: 100%;
@@ -100,22 +146,48 @@
 		resize: none;
 		border-radius: 5px;
 	}
+
+	#drop-zone {
+		position: relative;
+		width: 500px;
+		min-height: 200px;
+		border: 3px dashed #979797;
+		border-radius: 10px;
+		background-color: #e9e9e9a5;
+		padding: 20px;
+		text-align: center;
+		cursor: pointer;
+	}
+
 	#files {
-		margin-bottom: 20px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: red;
+		cursor: pointer;
+		margin-top: 0;
+		opacity: 0;
+	}
+
+	#drop-zone > label {
+		position: relative;
+		z-index: 1;
+		margin-top: 0;
 	}
 	button {
 		background-color: transparent;
-		padding: 10px;
-
+		border: 1px solid #363a5b;
+		padding: 20px 40px;
+		font-size: larger;
 		color: #dddddd;
 		transition: 500ms;
 		margin-bottom: 10px;
-		background-color: #363a5b;
+		color: #363a5b;
 		align-self: flex-end;
 		margin-top: 10px;
 		font-family: inter-extralight;
-		border: none;
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 	}
 	button:hover {
 		scale: 0.95;

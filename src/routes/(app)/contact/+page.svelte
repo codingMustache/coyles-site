@@ -21,7 +21,7 @@
 <style>
 	div {
 		display: flex;
-		justify-content: space-around;
+		justify-content: center;
 		gap: 20px;
 		min-height: 90vh;
 		width: 100%;
@@ -33,7 +33,6 @@
 			flex-direction: column;
 			align-items: center;
 			width: 90%;
-			margin: 0 auto;
 		}
 	}
 </style>

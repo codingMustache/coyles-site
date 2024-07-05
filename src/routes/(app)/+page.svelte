@@ -59,7 +59,7 @@
 	</section>
 	<div class="separator">
 		<a
-			href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.google.com%2Fmaps%2Fapi%2Fjs%2FReviewsService.CrossOriginAuthSuccess%3Fpb%3D%211shttps%253A%252F%252Fwww.google.com%26key%3DAIzaSyAQiTKe3tivKXammrJ6ov6u8E7KwZPNFss&hl=en&ifkv=AS5LTAQEkz7vMps-9tlQ_gpLx4WC1sslF6D72zS4rGRLF_AVAsdeIonust2mDQRXIaMVYU4YjtYW&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S1879794338%3A1720126958113509&ddm=0"
+			href="https://search.google.com/local/writereview?placeid=ChIJQxC1x0DT2WQR8LPBb0b7Tko&source=g.page.m._&laa=merchant-review-solicitation"
 			>Write A Review</a
 		>
 		<img
