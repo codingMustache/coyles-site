@@ -67,9 +67,7 @@
 			<input on:change={addPhotos} id="files" name="references" type="file" multiple />
 			<div class="thumbnail">
 				{#each photos as photo}
-					<div class="thumbnail-wrapper">
-						<img src={URL.createObjectURL(photo)} alt="Uploaded" />
-					</div>
+					<img src={URL.createObjectURL(photo)} alt="Uploaded" />
 				{/each}
 			</div>
 		</div>
@@ -90,10 +88,6 @@
 		width: 100px;
 		height: 100px;
 		object-fit: cover;
-	}
-	.thumbnail-wrapper {
-		width: 100px;
-		height: 100px;
 	}
 
 	select {
