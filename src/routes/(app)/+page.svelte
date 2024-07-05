@@ -43,8 +43,12 @@
 	<div class="separator">
 		<h3>Visit My Socials</h3>
 		<div class="content">
-			<a href="/contact"><IG /></a>
-			<a href="/contact"><Mail /></a>
+			<a href="https://www.instagram.com/coyleparker_tattoo?igsh=Nm1hemFxc294ZDJv" target="_blank">
+				<IG />
+			</a>
+			<a href="mailto:contact@coyleparker.art">
+				<Mail />
+			</a>
 		</div>
 		<img
 			src={data.images.middleImage}
