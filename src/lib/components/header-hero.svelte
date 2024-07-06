@@ -5,7 +5,7 @@
 <div id="header">
 	<div>
 		<h1>Coyle Parker</h1>
-		<p>Tattoo Artist</p>
+		<h2>A New Orleans Tattoo Artist</h2>
 	</div>
 	<img
 		src={headerImg.img}
@@ -18,6 +18,14 @@
 </div>
 
 <style>
+	@keyframes example {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 0.7;
+		}
+	}
 	#header {
 		display: contents;
 		position: absolute;
@@ -32,6 +40,7 @@
 		align-items: center;
 		flex-direction: column;
 		justify-content: center;
+		animation: example 5s linear 3s infinite alternate;
 	}
 	#header h1 {
 		margin: 0 auto;
@@ -55,7 +64,7 @@
 		width: 100%;
 	}
 
-	#header p {
+	#header h2 {
 		margin: 0 auto;
 		font-weight: 1;
 		color: white;
@@ -75,7 +84,7 @@
 		#header h1 {
 			font-size: 15rem;
 		}
-		#header p {
+		#header h2 {
 			font-size: 2rem;
 		}
 	}
@@ -83,7 +92,7 @@
 		#header h1 {
 			font-size: 10rem;
 		}
-		#header p {
+		#header h2 {
 			font-size: 2rem;
 		}
 	}
