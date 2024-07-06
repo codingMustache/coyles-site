@@ -25,6 +25,7 @@
 	img {
 		width: 100%;
 		height: auto;
+		max-width: 300px;
 		border-radius: 5px;
 	}
 	@media (max-width: 768px) {
