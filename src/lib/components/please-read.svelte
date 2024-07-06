@@ -27,9 +27,8 @@
 	img {
 		object-fit: cover;
 		width: 100%;
-		height: 700px;
+		height: 500px;
 		border-radius: 3px;
-		margin: 10px auto;
 	}
 	ul {
 		margin: 20px 0;
@@ -47,19 +46,17 @@
 			'Lucida Sans', Arial, sans-serif;
 	}
 	div {
-		width: 100%;
-		padding: 20px;
-
+		margin: 0 auto;
 		line-height: 2;
 		font-size: larger;
+		max-width: 900px;
+		padding: 10px;
 	}
 	@media (max-width: 768px) {
-		div {
-			width: 100%;
-		}
 		img {
 			width: 100%;
 			height: auto;
+			margin: 0 auto;
 		}
 	}
 </style>
