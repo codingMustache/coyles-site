@@ -15,7 +15,7 @@
 				<p>
 					{review.name}
 				</p>
-				<img src={review.image} alt="" />
+				<img src={review.image} alt={`client review avatar of ${review.name}`} />
 			</div>
 		</div>
 	{/each}

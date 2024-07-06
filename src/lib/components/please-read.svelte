@@ -9,7 +9,7 @@
 		<strong> If you do not receive a response about your tattoo request: </strong>
 	</p>
 	<p>
-		This means our I have reviewed your request and decided not to take it on. This could be for any
+		This means I have reviewed your request and decided not to take it on. This could be for any
 		number of reasons such as:
 	</p>
 	<ul>
