@@ -47,10 +47,11 @@
 		box-shadow: 0 0 50px 50px rgba(0, 0, 0, 0.5);
 		z-index: 40;
 		width: 90%;
-		padding: 20px;
+		padding: 10px;
 	}
 	.dialog img {
 		width: 100%;
+		height: 100%;
 	}
 
 	.scrollable {

@@ -48,6 +48,7 @@
 		justify-content: space-between;
 		width: 100%;
 		padding: 10px;
+		margin: 0 auto;
 		border-radius: 5px;
 		box-shadow: 0px 0px 10px 1px rgba(200, 200, 200, 0.7);
 	}
@@ -62,7 +63,7 @@
 		margin: 0;
 		font-weight: bold;
 	}
-	@media (max-width: 768px) {
+	@media (max-width: 900px) {
 		#review-list {
 			grid-template-columns: 1fr;
 		}
