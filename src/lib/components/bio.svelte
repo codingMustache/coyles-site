@@ -23,8 +23,8 @@
 		font-size: large;
 	}
 	img {
-		width: auto;
-		height: 500px;
+		width: 100%;
+		height: auto;
 		border-radius: 5px;
 	}
 	@media (max-width: 768px) {
@@ -36,11 +36,8 @@
 			text-align: center;
 		}
 		img {
-			object-fit: cover;
-			object-position: center 25%;
 			width: 100%;
-			height: 400px;
-			margin-top: 20px;
+			height: auto;
 		}
 	}
 </style>
