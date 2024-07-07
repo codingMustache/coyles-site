@@ -1,18 +1,81 @@
 <script>
-	import { CloseCircleIcon } from '@sanity/icons';
-	/**
-	 * @type {any[]}
-	 */
-	let photos = [];
-	$: photos;
-	const addPhotos = (/** @type any */ e) => {
-		//photos = Array.from(files);
-		const files = Array.from(e.target.files);
-		photos = files;
+	// @ts-nocheck
+
+	import Compressor from 'compressorjs';
+
+	let files = [];
+	let resizedFiles = [];
+
+	const addPhotos = async (e) => {
+		e.preventDefault();
+		const filesFromElement = e.target.files;
+
+		if (!filesFromElement) return;
+
+		for (let i = 0; i < filesFromElement.length; i++) {
+			new Compressor(filesFromElement[i], {
+				quality: 0.5,
+				maxWidth: 500,
+				maxHeight: 500,
+				resize: 'contain',
+				success(result) {
+					resizedFiles = [...resizedFiles, result];
+				},
+				error(err) {
+					console.log(err.message);
+				}
+			});
+		}
+	};
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		const form = new FormData(e.target);
+
+		const pronoun = form.get('pronoun');
+		const firstName = form.get('first name');
+		const lastName = form.get('last name');
+		const email = form.get('email');
+		const phone = form.get('telephone number');
+		const description = form.get('description');
+		const location = form.get('location of tattoo');
+		const size = form.get('size of tattoo');
+		const color = form.get('color');
+		const misc = form.get('misc');
+
+		const jsonObj = {
+			pronoun,
+			firstName,
+			lastName,
+			email,
+			phone,
+			description,
+			location,
+			size,
+			color,
+			misc
+		};
+		const form_data = new FormData();
+		for (var key in jsonObj) {
+			form_data.append(key, jsonObj[key]);
+		}
+
+		resizedFiles.forEach((file) => {
+			form_data.append('files', file);
+		});
+
+		return fetch('?/contact', {
+			method: 'POST',
+			body: form_data
+		}).catch((err) => console.error(err));
 	};
 </script>
 
-<form method="POST" action="?/contact" enctype="multipart/form-data">
+<form
+	method="POST"
+	action="?/contact"
+	on:submit|preventDefault={handleSubmit}
+	enctype="multipart/form-data"
+>
 	<div class="customer">
 		<label for="pronouns"> Pronouns: </label>
 		<select id="pronouns" name="pronoun">
@@ -24,13 +87,13 @@
 
 		<div class="name">
 			<label for="first name">First Name</label>
-			<input name="first name" type="text" />
+			<input name="first name" placeholder="First Name" type="text" />
 			<label for="last name">Last Name</label>
-			<input name="last name" type="text" />
+			<input name="last name" placeholder="Last Name" type="text" />
 			<label for="email">Email</label>
-			<input name="email" type="email" />
+			<input name="email" placeholder="Email" type="email" />
 			<label for="telephone number">Phone #</label>
-			<input name="telephone number" type="tel" autocorrect="on" />
+			<input name="telephone number" placeholder="Phone Number" type="tel" autocorrect="on" />
 		</div>
 	</div>
 	<div class="tattoo">
@@ -64,12 +127,14 @@
 		</div>
 		<div id="drop-zone">
 			<label for="references"> Click Or Drop Photos to upload references Here</label>
-			<input on:change={addPhotos} id="files" name="references" type="file" multiple />
-			<div class="thumbnail">
-				{#each photos as photo}
-					<img src={URL.createObjectURL(photo)} alt="Uploaded" />
-				{/each}
-			</div>
+			<input bind:files on:change={addPhotos} id="files" name="references" type="file" multiple />
+			{#if files}
+				<div class="thumbnail">
+					{#each files as photo}
+						<img src={URL.createObjectURL(photo)} alt="Uploaded" />
+					{/each}
+				</div>
+			{/if}
 		</div>
 		<label for="misc"> Anything else you want me to know: </label>
 		<textarea placeholder="" name="misc" rows="4" cols="50" />
@@ -78,6 +143,15 @@
 </form>
 
 <style>
+	.name label {
+		display: none;
+	}
+	.name input {
+		width: 300px;
+		margin: 0;
+		height: 30px;
+		font-size: large;
+	}
 	.thumbnail {
 		display: flex;
 		flex-wrap: wrap;
@@ -143,7 +217,7 @@
 
 	#drop-zone {
 		position: relative;
-		width: 500px;
+		max-width: 500px;
 		min-height: 200px;
 		border: 3px dashed #979797;
 		border-radius: 10px;
@@ -200,6 +274,14 @@
 	@media (max-width: 768px) {
 		button {
 			font-size: x-large;
+		}
+		.name {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+		}
+		.name input {
+			width: 100%;
 		}
 	}
 </style>
