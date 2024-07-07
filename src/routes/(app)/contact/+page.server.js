@@ -32,7 +32,7 @@ export const actions = {
 		console.log(formObj);
 		const htmlParser = msgParser(formObj);
 
-		emailer(htmlParser, attachments);
+		await emailer(htmlParser, attachments);
 
 		return { success: true };
 	}
