@@ -19,7 +19,7 @@ export const emailer = async (msg, attachments = []) => {
 	const info = await transporter.sendMail({
 		// @ts-ignore
 		from: `Coyle Parker <appt@coyleparker.art>`,
-		to: 'contact@coyleparker.art',
+		to: 'test@codingMustache.dev',
 		subject: 'New Client',
 		html: msg,
 		attachments: attachments

@@ -2,7 +2,9 @@
 	// @ts-nocheck
 
 	import Compressor from 'compressorjs';
-
+	/** @type {import('./$types').ActionData} */
+	export let form;
+	$: form;
 	let files = [];
 	let resizedFiles = [];
 
@@ -29,18 +31,18 @@
 	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		const form = new FormData(e.target);
+		const ogForm = new FormData(e.target);
 
-		const pronoun = form.get('pronoun');
-		const firstName = form.get('first name');
-		const lastName = form.get('last name');
-		const email = form.get('email');
-		const phone = form.get('telephone number');
-		const description = form.get('description');
-		const location = form.get('location of tattoo');
-		const size = form.get('size of tattoo');
-		const color = form.get('color');
-		const misc = form.get('misc');
+		const pronoun = ogForm.get('pronoun');
+		const firstName = ogForm.get('first name');
+		const lastName = ogForm.get('last name');
+		const email = ogForm.get('email');
+		const phone = ogForm.get('telephone number');
+		const description = ogForm.get('description');
+		const location = ogForm.get('location of tattoo');
+		const size = ogForm.get('size of tattoo');
+		const color = ogForm.get('color');
+		const misc = ogForm.get('misc');
 
 		const jsonObj = {
 			pronoun,
@@ -66,7 +68,9 @@
 		return fetch('?/contact', {
 			method: 'POST',
 			body: form_data
-		}).catch((err) => console.error(err));
+		})
+			.then((data) => (form = { success: true }))
+			.catch((err) => console.error(err));
 	};
 </script>
 
@@ -76,70 +80,74 @@
 	on:submit|preventDefault={handleSubmit}
 	enctype="multipart/form-data"
 >
-	<div class="customer">
-		<label for="pronouns"> Pronouns: </label>
-		<select id="pronouns" name="pronoun">
-			<option value="he/him">He/Him</option>
-			<option value="she/her">She/Her</option>
-			<option selected value="they/them">They/Them</option>
-			<option value="other">Other</option>
-		</select>
+	{#if form?.success}
+		<h3>Thank you For booking</h3>
+	{:else}
+		<div class="customer">
+			<label for="pronouns"> Pronouns: </label>
+			<select id="pronouns" name="pronoun">
+				<option value="he/him">He/Him</option>
+				<option value="she/her">She/Her</option>
+				<option selected value="they/them">They/Them</option>
+				<option value="other">Other</option>
+			</select>
 
-		<div class="name">
-			<label for="first name">First Name</label>
-			<input name="first name" placeholder="First Name" type="text" />
-			<label for="last name">Last Name</label>
-			<input name="last name" placeholder="Last Name" type="text" />
-			<label for="email">Email</label>
-			<input name="email" placeholder="Email" type="email" />
-			<label for="telephone number">Phone #</label>
-			<input name="telephone number" placeholder="Phone Number" type="tel" autocorrect="on" />
-		</div>
-	</div>
-	<div class="tattoo">
-		<label for="description"> Please describe your design idea: </label>
-		<textarea placeholder="Skull with a snake" name="description" rows="4" cols="50" />
-		<label for="location of tattoo"> Location of tattoo: </label>
-		<input type="text" name="location of tattoo" />
-		<label for="size of tattoo"> Size: </label>
-		<select name="size of tattoo" id="size">
-			<option value=">1">less than 1 inch"</option>
-			<option value="1-3">1-3 inches</option>
-			<option value="3-5">3-5 inches</option>
-			<option value="5-7">5-7 inches</option>
-			<option value="7-10">7-10 inches</option>
-			<option value="<10">over 10 inches</option>
-			<option value="1/2 Sleeve">Half Sleeve/Leg</option>
-			<option value="Sleeve">Whole Sleeve/Leg</option>
-			<option value="Chest">Chest Piece</option>
-			<option value="Torso">Whole Front/Back Torso</option>
-		</select>
-		<div class="color">
-			<p>Color Option:</p>
-			<div class="color-option">
-				<input name="color" type="radio" value="Full Color" />
-				<label for="color"> Color </label>
-			</div>
-			<div class="color-option">
-				<input name="color" type="radio" value="Black/Grey" />
-				<label for="color"> Black and Grey </label>
+			<div class="name">
+				<label for="first name">First Name</label>
+				<input name="first name" placeholder="First Name" type="text" />
+				<label for="last name">Last Name</label>
+				<input name="last name" placeholder="Last Name" type="text" />
+				<label for="email">Email</label>
+				<input name="email" placeholder="Email" type="email" />
+				<label for="telephone number">Phone #</label>
+				<input name="telephone number" placeholder="Phone Number" type="tel" autocorrect="on" />
 			</div>
 		</div>
-		<div id="drop-zone">
-			<label for="references"> Click Or Drop Photos to upload references Here</label>
-			<input bind:files on:change={addPhotos} id="files" name="references" type="file" multiple />
-			{#if files}
-				<div class="thumbnail">
-					{#each files as photo}
-						<img src={URL.createObjectURL(photo)} alt="Uploaded" />
-					{/each}
+		<div class="tattoo">
+			<label for="description"> Please describe your design idea: </label>
+			<textarea placeholder="Skull with a snake" name="description" rows="4" cols="50" />
+			<label for="location of tattoo"> Location of tattoo: </label>
+			<input type="text" name="location of tattoo" />
+			<label for="size of tattoo"> Size: </label>
+			<select name="size of tattoo" id="size">
+				<option value=">1">less than 1 inch"</option>
+				<option value="1-3">1-3 inches</option>
+				<option value="3-5">3-5 inches</option>
+				<option value="5-7">5-7 inches</option>
+				<option value="7-10">7-10 inches</option>
+				<option value="<10">over 10 inches</option>
+				<option value="1/2 Sleeve">Half Sleeve/Leg</option>
+				<option value="Sleeve">Whole Sleeve/Leg</option>
+				<option value="Chest">Chest Piece</option>
+				<option value="Torso">Whole Front/Back Torso</option>
+			</select>
+			<div class="color">
+				<p>Color Option:</p>
+				<div class="color-option">
+					<input name="color" type="radio" value="Full Color" />
+					<label for="color"> Color </label>
 				</div>
-			{/if}
+				<div class="color-option">
+					<input name="color" type="radio" value="Black/Grey" />
+					<label for="color"> Black and Grey </label>
+				</div>
+			</div>
+			<div id="drop-zone">
+				<label for="references"> Click Or Drop Photos to upload references Here</label>
+				<input bind:files on:change={addPhotos} id="files" name="references" type="file" multiple />
+				{#if files}
+					<div class="thumbnail">
+						{#each files as photo}
+							<img src={URL.createObjectURL(photo)} alt="Uploaded" />
+						{/each}
+					</div>
+				{/if}
+			</div>
+			<label for="misc"> Anything else you want me to know: </label>
+			<textarea placeholder="" name="misc" rows="4" cols="50" />
 		</div>
-		<label for="misc"> Anything else you want me to know: </label>
-		<textarea placeholder="" name="misc" rows="4" cols="50" />
-	</div>
-	<button type="submit">Submit</button>
+		<button type="submit">Submit</button>
+	{/if}
 </form>
 
 <style>
