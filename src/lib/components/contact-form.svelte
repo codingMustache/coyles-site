@@ -3,7 +3,7 @@
 
 	import Compressor from 'compressorjs';
 	/** @type {import('./$types').ActionData} */
-	export let form;
+	let form;
 	$: form;
 	let files = [];
 	let resizedFiles = [];
