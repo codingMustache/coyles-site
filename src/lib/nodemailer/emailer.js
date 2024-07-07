@@ -33,7 +33,7 @@ export const emailer = async (msg, attachments = []) => {
 	const mailData = {
 		// @ts-ignore
 		from: `Coyle Parker <appt@coyleparker.art>`,
-		to: 'contact@coyleparker.art',
+		to: 'jorge@codingMustache.dev',
 		subject: 'New Client',
 		html: msg,
 		attachments: attachments
