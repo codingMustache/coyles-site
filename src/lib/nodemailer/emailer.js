@@ -1,21 +1,19 @@
 import nodemailer from 'nodemailer';
 import { emailPW, email } from '$env/static/private';
 
-const transporter = nodemailer.createTransport({
-	service: 'icloud',
-	auth: {
-		user: email,
-		pass: emailPW
-	}
-});
-
 /**
  *
  * @param {String} msg : HTML message to be sent
  * @param {any} attachments : array of attachments
  */
 export const emailer = async (msg, attachments = []) => {
-	// send mail with defined transport object
+	const transporter = nodemailer.createTransport({
+		service: 'icloud',
+		auth: {
+			user: email,
+			pass: emailPW
+		}
+	});
 
 	await new Promise((resolve, reject) => {
 		// verify connection configuration
@@ -50,4 +48,5 @@ export const emailer = async (msg, attachments = []) => {
 			}
 		});
 	});
+	console.log('Email sent successfully');
 };
