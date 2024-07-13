@@ -12,15 +12,9 @@
 	const openDialog = (/** @type {string | null} */ img) => (activeImage = img);
 
 	const closeDialog = () => (activeImage = null);
-	let scrollContainer;
-
-	const handleWheel = (e) => {
-		e.preventDefault();
-		scrollContainer.scrollLeft += e.deltaY;
-	};
 </script>
 
-<div class="scrollable" bind:this={scrollContainer} on:wheel={handleWheel}>
+<div class="scrollable">
 	<div id="photo-grid">
 		{#each portfolioItems as img}
 			<button class="imgs" on:click={() => openDialog(img)} aria-label="Open Dialog" type="button">

@@ -61,7 +61,15 @@
 		position: relative;
 		border: 1px solid #ddd;
 		padding: 10px;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
+		transition: 300ms;
+	}
+	.blog-card:hover {
+		box-shadow: 0 0 16px 3px rgba(0, 0, 0, 0.2);
+		scale: 1.001;
+	}
+	.blog-card:hover img {
+		object-position: 70% 70%;
 	}
 
 	.blog-card h2 {
@@ -88,5 +96,6 @@
 		object-fit: cover;
 		max-height: 100%; /* Adjust as needed */
 		width: 50%;
+		transition: 300ms;
 	}
 </style>

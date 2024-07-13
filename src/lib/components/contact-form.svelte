@@ -189,10 +189,11 @@
 	label {
 		display: flex;
 		flex-direction: column;
+		margin-top: 30px;
 	}
 	label,
 	input {
-		margin-top: 30px;
+		margin-top: 10px;
 	}
 	.customer,
 	.tattoo {

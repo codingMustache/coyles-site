@@ -50,7 +50,7 @@
 		line-height: 2;
 		font-size: larger;
 		max-width: 900px;
-		padding: 10px;
+		padding: 20px 30px;
 	}
 	@media (max-width: 768px) {
 		img {
