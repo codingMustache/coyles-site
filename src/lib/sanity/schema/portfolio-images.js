@@ -20,13 +20,6 @@ export default {
 								what\'s on your page.`
 				}
 			]
-		},
-		{
-			title: 'Hidden Text',
-			description:
-				'This text will be hidden from the user but still accessible to screen readers and SEO, you should never use Image, photo, picture or anything like that here',
-			name: 'hiddenText',
-			type: 'string'
 		}
 	]
 };

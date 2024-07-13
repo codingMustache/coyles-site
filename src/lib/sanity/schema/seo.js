@@ -1,3 +1,5 @@
+import { deserialize } from '$app/forms';
+
 export default {
 	title: 'SEO',
 	name: 'seo',
@@ -7,22 +9,26 @@ export default {
 		{
 			title: 'Page Title',
 			name: 'pageTitle',
+			description: 'The title of the page, keep it under 60 characters',
 			type: 'string'
 		},
 		{
 			title: 'Meta Description',
 			name: 'metaDescription',
-			type: 'string'
+			description: 'The description of the page, keep it under 160 characters',
+			type: 'text'
 		},
 		{
 			title: 'Open Graph Title',
 			name: 'openGraphTitle',
+			description: 'The title of the page, keep it under 60 characters',
 			type: 'string'
 		},
 		{
 			title: 'Open Graph Description',
 			name: 'openGraphDescription',
-			type: 'string'
+			description: 'The description of the page, keep it under 160 characters',
+			type: 'text'
 		},
 		{
 			title: 'Open Graph Image',
@@ -32,12 +38,14 @@ export default {
 		{
 			title: 'Twitter Title',
 			name: 'twitterTitle',
+			description: 'The title of the page, keep it under 60 characters',
 			type: 'string'
 		},
 		{
 			title: 'Twitter Description',
 			name: 'twitterDescription',
-			type: 'string'
+			description: 'The description of the page, keep it under 160 characters',
+			type: 'text'
 		},
 		{
 			title: 'Twitter Image',

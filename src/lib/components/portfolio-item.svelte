@@ -5,7 +5,7 @@
 	export let img;
 </script>
 
-<img src={img.image} alt={img.hiddenTxt} width="100px" height="100px" />
+<img src={img.image} alt={img.altText} width="100px" height="100px" />
 
 <style>
 	img {

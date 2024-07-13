@@ -27,7 +27,7 @@
 		display: flex;
 		justify-content: center;
 		gap: 20px;
-		min-height: 90vh;
+
 		width: 100%;
 		max-width: 1500px;
 		margin: 0 auto;

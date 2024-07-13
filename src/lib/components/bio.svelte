@@ -4,10 +4,10 @@
 
 <div id="bio">
 	<p>
-		{bio.content}
+		{bio.bio}
 	</p>
 
-	<img src={bio.image} alt={bio.hiddenText} width="100px" height="100px" />
+	<img src={bio.image} alt={bio.altText} width="100px" height="100px" />
 </div>
 
 <style>

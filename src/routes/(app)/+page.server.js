@@ -5,16 +5,17 @@ export const load = async ({ params }) => {
 		const bio = (
 			await client.fetch(
 				`*[_id == "bio"]{
-					"content" : content[0].children[0].text, 
+					'bio': bio,
 					"image": image.asset->url,
-					"hiddenText": hiddenText
+					"altText": image.alt,
 					}`
 			)
 		)[0];
+
 		const portfolioImages = await client.fetch(
 			`*[_type == "portfolioImages"]{
-					"image": image.asset->url, 
-					"hiddenText": hiddenText
+					"image": image.asset->url,
+					"altText": image.alt,
 					}`
 		);
 		const images = (
@@ -36,8 +37,8 @@ export const load = async ({ params }) => {
 			`*[_type == "reviews"]{
 							title,
 							name, 
-							"review": review[0].children[0].text, 
-							"image": image.asset->url
+							"review": reviewContent,
+							"image": image.asset->url,
 							}`
 		);
 

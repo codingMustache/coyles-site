@@ -32,7 +32,7 @@
 
 {#if activeImage}
 	<button class="dialog" on:click={closeDialog} aria-label="Close Dialog" type="button">
-		<img src={activeImage.image} alt={activeImage.hiddenTxt} />
+		<img src={activeImage.image} alt={activeImage.altText} />
 	</button>
 {/if}
 

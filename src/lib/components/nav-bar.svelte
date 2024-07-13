@@ -10,12 +10,10 @@
 
 <nav>
 	<a href="/">Home</a>
+	<a href="/blogs">Blogs</a>
 	{#if $page.route.id == '/(app)'}
 		<a href="#portfolio">Portfolio</a>
 		<a href="#bio">Bio</a>
-		<!-- <a on:click={() => (isOpen = false)} id="book" href="/contact">
-			<button>BOOK NOW</button>
-		</a> -->
 	{/if}
 	<button class="hamburger" on:click={toggleMenu} aria-label="Toggle Menu">
 		<svg width="30" height="30" viewBox="0 0 30 30">
@@ -27,6 +25,7 @@
 </nav>
 <div class:open={isOpen} class="menu">
 	<a on:click={toggleMenu} href="/">Home</a>
+	<a on:click={toggleMenu} href="/blogs">Blogs</a>
 	{#if $page.route.id == '/(app)'}
 		<a on:click={toggleMenu} href="#portfolio">Portfolio</a>
 		<a on:click={toggleMenu} href="#bio">Bio</a>
@@ -44,11 +43,6 @@
 		font-size: large;
 		font-family: inter-extralight;
 	}
-	/* a button:hover {
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-		scale: 1.1;
-		font-family: inter-light;
-	} */
 
 	nav {
 		background-color: #fff;

@@ -9,10 +9,30 @@
 	inject();
 </script>
 
-<NavBar />
+<div class="wrapper">
+	<NavBar />
+	<main>
+		<slot />
+	</main>
+	<div class="footer">
+		<Footer />
+	</div>
+</div>
 
-<main>
-	<slot />
-</main>
+<style>
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
 
-<Footer />
+	main {
+		flex: 1;
+	}
+
+	.footer {
+		background-color: #f8f8f8;
+		padding: 20px;
+		text-align: center;
+	}
+</style>

@@ -18,11 +18,11 @@ export default {
 			name: 'name',
 			title: 'Name of Reviewer'
 		},
+
 		{
-			title: 'Review',
-			name: 'review',
-			type: 'array',
-			of: [{ type: 'block' }]
+			title: 'Review-content',
+			name: 'reviewContent',
+			type: 'text'
 		}
 	]
 };

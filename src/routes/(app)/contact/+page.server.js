@@ -4,12 +4,12 @@ import { imgParser } from '$lib/nodemailer/imgParser';
 import { msgParser } from '$lib/nodemailer/msgParser';
 import client from '$lib/sanity/sanity-client';
 
-export const load = async ({ params }) => {
+export const load = async () => {
 	const image = (
 		await client.fetch(
 			`*[_id == "imageGroup"]{
-        "img": middleImage.asset->url, 
-    		"imgTxt": middleImage.alt, 
+        		"img": middleImage.asset->url, 
+    			"imgTxt": middleImage.alt, 
         }`
 		)
 	)[0];
