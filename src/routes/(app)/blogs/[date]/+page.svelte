@@ -3,14 +3,18 @@
 	import ImageRte from '$lib/components/image-render.svelte';
 	import { PortableText } from '@portabletext/svelte';
 	export let data;
+	const humanReadableDate = (/** @type {string | number | Date} */ dateString) => {
+		const date = new Date(dateString);
+		return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+	};
 </script>
 
 <div class="blog-content">
 	<section>
 		<h1>{data.title}</h1>
-		<p class="pubDate">Published: {data.publishedAt}</p>
-		<img class="titleImg" src={data.image} alt={data.altText} />
+		<p class="pubDate">Published: {humanReadableDate(data.publishedAt)}</p>
 	</section>
+	<img class="titleImg" src={data.image} alt={data.altText} />
 	<section class="post">
 		<PortableText
 			value={data.content}
@@ -32,7 +36,7 @@
 		font-size: 1.2rem;
 	}
 	section {
-		width: 100%;
+		width: 90%;
 	}
 	.pubDate {
 		color: #aaa;
@@ -45,8 +49,10 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		margin-top: 10%;
+
 		width: 100%;
+		max-width: 1200px;
+		margin: 10vh auto;
 	}
 	.titleImg {
 		object-fit: cover;
