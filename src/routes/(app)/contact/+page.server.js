@@ -30,9 +30,9 @@ export const actions = {
 			attachments = await imgParser(files);
 		}
 		console.log(formObj);
-		const htmlParser = msgParser(formObj);
-
-		await emailer(htmlParser, attachments);
+		const htmlParser = msgParser(formObj, attachments);
+		console.log(htmlParser);
+		//await emailer(htmlParser, attachments);
 
 		return { success: true };
 	}

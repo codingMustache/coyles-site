@@ -1,4 +1,7 @@
-export const msgParser = (/** @type {{ [x: string]: any; references?: any; }} */ msg) => {
+export const msgParser = (
+	/** @type {{ [x: string]: any; references?: any; }} */ msg,
+	/** @type {any[]} */ attachments
+) => {
 	return `
     <!DOCTYPE html>
       <html>
@@ -23,16 +26,16 @@ export const msgParser = (/** @type {{ [x: string]: any; references?: any; }} */
           </style>
         </head>
         <body>
-          <p>${msg['first name'] ? msg['first name'] : ''} ${msg['last name'] ? msg['last name'] : ''} is interested in a tattoo.</p>
-          <p>Their pronouns are ${msg['pronoun'] ? msg['pronoun'] : ''}.</p>
-          <p>They can be reached at ${msg['email']} or ${msg['telephone number'] ? msg['telephone number'] : ''}.</p>
-          <p>They describe their tattoo as follows: ${msg['description'] ? msg['description'] : ''}.</p>
-          <p>The tattoo will be located on their ${msg['location of tattoo'] ? msg['location of tattoo'] : ''}.</p>
-          <p>The tattoo will be ${msg['size of tattoo'] ? msg['size of tattoo'] : ''} inches.</p>
-          <p>The tattoo will be in color: ${msg['color'] == 'on' ? 'yes' : 'no'}.</p>
+          <p>${msg['first name'] ? msg['firstName'] : "They didn't write a last name"} ${msg['lastName'] ? msg['lastName'] : "They didn't write a last name"} is interested in a tattoo.</p>
+          <p>Their pronouns are ${msg['pronoun'] ? msg['pronoun'] : "They didn't pick a pronoun"}.</p>
+          <p>They can be reached at ${msg['email']} or ${msg['phone'] ? msg['phone'] : "They didn't write an email "}.</p>
+          <p>They describe their tattoo as follows: ${msg['description'] ? msg['description'] : "They didn't write a description"}.</p>
+          <p>The tattoo will be located on their ${msg['location'] ? msg['location'] : "They didn't pick a location"}.</p>
+          <p>The tattoo will be ${msg['size'] ? msg['size'] : "They didn't pick a size"} inches.</p>
+          <p>The tattoo will be in color: ${msg['color'] ? msg['color'] : "They didn't pick a color"}.</p>
           ${
-						msg.references
-							? msg.references.map((/** @type {any} */ x) => `<img src="cid:${x}">`).join('')
+						attachments.length > 0
+							? attachments.map((/** @type {any} */ x) => `<img src="cid:${x}">`).join('')
 							: "<p>They didn't attache any references.</p>"
 					}
           <p>Additional notes: ${msg['misc'] ? msg['misc'] : ''}.</p>
