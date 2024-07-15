@@ -30,11 +30,39 @@
 			/>
 		</svg>
 	</a>
+	<div class="bottom">
+		<div class="design">
+			<a href="https://codingMustache.dev">
+				<p>Created and Designed by Coding Mustache</p>
+			</a>
+		</div>
+		<div class="register">
+			<p>© 2021 Coyle Parker</p>
+			<p>All Rights Reserved</p>
+		</div>
+	</div>
 </footer>
 
 <style>
+	.bottom {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.design a p {
+		text-decoration: none;
+		color: black;
+	}
+
+	.register {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+	}
 	footer {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 20px;
 		align-items: center;
 		justify-content: center;
