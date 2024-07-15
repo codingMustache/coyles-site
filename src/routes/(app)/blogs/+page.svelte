@@ -100,4 +100,9 @@
 		width: 50%;
 		transition: 300ms;
 	}
+	@media (max-width: 768px) {
+		.main {
+			margin-top: 20%;
+		}
+	}
 </style>
