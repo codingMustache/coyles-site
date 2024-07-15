@@ -43,7 +43,7 @@ export const GET = async () => {
         0.70
     </priority>
 </url>
-${blogPosts.map((post) => {
+${blogPosts.map((/** @type {{ slug: any; }} */ post) => {
 	return `<url>
     <loc>
         https://www.coyleparker.art/blogs/${post.slug}
