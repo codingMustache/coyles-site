@@ -15,8 +15,10 @@
 		{#each data.blogs as blog}
 			<a href={`blogs/${blog.publishedAt}`} aria-label={`A blog post titled: ${blog.title}`}>
 				<div class="blog-card">
-					<h2>{blog.title}</h2>
-					<p>Published: {humanReadableDate(blog.publishedAt)}</p>
+					<div class="blog-card-content">
+						<h2>{blog.title}</h2>
+						<p>Published: {humanReadableDate(blog.publishedAt)}</p>
+					</div>
 					<img src={blog.image} alt={blog.altText} />
 				</div>
 			</a>
@@ -29,7 +31,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		margin-top: 10%;
+		margin-top: 14%;
 		width: 100%;
 	}
 
@@ -52,6 +54,7 @@
 		min-height: 200px; /* Adjust as needed */
 		width: 100%;
 	}
+
 	.blog-card {
 		display: flex;
 		flex-direction: column;
@@ -64,6 +67,13 @@
 		box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
 		transition: 300ms;
 	}
+	.blog-card-content {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		width: 50%;
+		min-height: 200px;
+	}
 	.blog-card:hover {
 		box-shadow: 0 0 16px 3px rgba(0, 0, 0, 0.2);
 		scale: 1.001;
@@ -73,18 +83,10 @@
 	}
 
 	.blog-card h2 {
-		position: absolute;
 		font-size: x-large;
-		top: 30px;
-		left: 30px;
-		margin: 0;
 	}
 
 	.blog-card p {
-		position: absolute;
-		bottom: 30px;
-		left: 30px;
-		margin: 0;
 		color: rgb(134, 134, 134);
 	}
 
