@@ -9,12 +9,15 @@
 </script>
 
 <nav>
-	<a href="/">Home</a>
-	<a href="/blogs">Blogs</a>
-	{#if $page.route.id == '/(app)'}
-		<a href="#portfolio">Portfolio</a>
-		<a href="#bio">Bio</a>
-	{/if}
+	<div class="links">
+		<a href="/">Home</a>
+		{#if $page.route.id == '/(app)'}
+			<a href="#portfolio">Portfolio</a>
+			<a href="#bio">Bio</a>
+		{/if}
+		<a href="/blogs">Blogs</a>
+		<a href="/contact">Book Appt</a>
+	</div>
 	<button class="hamburger" on:click={toggleMenu} aria-label="Toggle Menu">
 		<svg width="30" height="30" viewBox="0 0 30 30">
 			<rect class="bar1" y="0" width="30" height="3"></rect>
@@ -48,14 +51,14 @@
 		background-color: #fff;
 		display: flex;
 		align-items: center;
-		justify-content: space-around;
+		justify-content: flex-end;
 		position: fixed;
 		top: 0;
 		width: 100%;
 		padding: 0 20px;
 		z-index: 20;
 		height: 10vh;
-		font-size: x-large;
+		font-size: large;
 		box-sizing: border-box;
 		max-height: 100px;
 	}
@@ -100,7 +103,7 @@
 			font-size: medium;
 			padding: 20px;
 		}
-		nav > a {
+		nav > .links {
 			display: none;
 		}
 		nav {
