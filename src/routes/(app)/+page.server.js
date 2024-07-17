@@ -58,7 +58,7 @@ export const load = async ({ params }) => {
 			)
 		)[0];
 
-		console.log(seo);
+		
 		return {
 			images,
 			portfolioImages,

@@ -35,15 +35,15 @@ export const actions = {
 		const form = await request.formData();
 		const formObj = Object.fromEntries(form.entries());
 		const files = form.getAll('files');
-		console.log(files);
+
 		let attachments = [];
 		if (files) {
 			attachments = await imgParser(files);
 		}
-		console.log(formObj);
+
 		const htmlParser = msgParser(formObj, attachments);
-		console.log(htmlParser);
-		//await emailer(htmlParser, attachments);
+
+		await emailer(htmlParser, attachments);
 
 		return { success: true };
 	}

@@ -14,7 +14,6 @@ export const load = async ({ params }) => {
                 content
                 }`)
 	)[0];
-	console.log(blog);
 
 	const processPortableText = (/** @type {any[]} */ content) => {
 		return content.map((/** @type any } */ block) => {
