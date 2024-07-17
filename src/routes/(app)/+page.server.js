@@ -58,7 +58,6 @@ export const load = async ({ params }) => {
 			)
 		)[0];
 
-		
 		return {
 			images,
 			portfolioImages,
@@ -67,6 +66,6 @@ export const load = async ({ params }) => {
 			seo
 		};
 	} catch (e) {
-		console.log(e);
+		console.error(e);
 	}
 };

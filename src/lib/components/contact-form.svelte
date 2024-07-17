@@ -24,7 +24,7 @@
 					resizedFiles = [...resizedFiles, result];
 				},
 				error(err) {
-					console.log(err.message);
+					console.error(err.message);
 				}
 			});
 		}
