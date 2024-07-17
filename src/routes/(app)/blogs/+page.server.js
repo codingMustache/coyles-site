@@ -9,11 +9,11 @@ export const load = async () => {
                 publishedAt,
         }`
 	);
-	
+
 	const seo = (
 		await client.fetch(
-			`*[_type == "seo" && _id == "contact"]{
-						"tile": pageTitle,
+			`*[_type == "seo" && _id == "blogs"]{
+						"title": pageTitle,
 						"description": metaDescription,
 						"image": openGraphImage.asset->url,
 						}`

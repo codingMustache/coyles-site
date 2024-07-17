@@ -20,7 +20,6 @@
 
 <div class="main">
 	<h1>Blogs Posts</h1>
-
 	<div class="card-list">
 		{#each data.blogs as blog}
 			<a href={`blogs/${blog.publishedAt}`} aria-label={`A blog post titled: ${blog.title}`}>

@@ -51,7 +51,7 @@ export const load = async ({ params }) => {
 		const seo = (
 			await client.fetch(
 				`*[_type == "seo" && _id == "home"]{
-							"tile": pageTitle,
+							"title": pageTitle,
 							"description": metaDescription,
 							"image": openGraphImage.asset->url,
 							}`
