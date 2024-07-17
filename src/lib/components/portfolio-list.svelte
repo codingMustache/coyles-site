@@ -42,10 +42,11 @@
 		z-index: 40;
 		width: 90%;
 		padding: 10px;
+		max-width: 800px;
 	}
 	.dialog img {
 		width: 100%;
-		height: 100%;
+		height: auto;
 	}
 
 	.scrollable {
@@ -76,9 +77,6 @@
 		scale: 0.97;
 		filter: grayscale(0);
 		z-index: 5;
-	}
-	button {
-		padding: 3px;
 	}
 
 	button.imgs {

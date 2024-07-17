@@ -60,7 +60,7 @@
 			10px 10px rgb(0, 0, 0),
 			11px 11px rgb(0, 0, 0),
 			1px 1px 15px rgb(255, 255, 255);
-		font-size: 25rem;
+		font-size: 15rem;
 		width: 100%;
 	}
 
@@ -82,7 +82,7 @@
 
 	@media (max-width: 900px) {
 		#header h1 {
-			font-size: 15rem;
+			font-size: 10rem;
 		}
 		#header h2 {
 			font-size: 2rem;
