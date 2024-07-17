@@ -12,11 +12,17 @@ export const load = async ({ params }) => {
 			)
 		)[0];
 
-		const portfolioImages = await client.fetch(
-			`*[_type == "portfolioImages"]{
+		const portfolioImages = (
+			await client.fetch(
+				`*[_type == "portfolioImages"]{
 					"image": image.asset->url,
 					"altText": image.alt,
+					'place': image.place,
 					}`
+			)
+		).sort(
+			(/** @type {{ place: number; }} */ a, /** @type {{ place: number; }} */ b) =>
+				a.place - b.place
 		);
 		const images = (
 			await client.fetch(
@@ -42,11 +48,23 @@ export const load = async ({ params }) => {
 							}`
 		);
 
+		const seo = (
+			await client.fetch(
+				`*[_type == "seo" && _id == "home"]{
+							"tile": pageTitle,
+							"description": metaDescription,
+							"image": openGraphImage.asset->url,
+							}`
+			)
+		)[0];
+
+		console.log(seo);
 		return {
 			images,
 			portfolioImages,
 			bio,
-			reviews
+			reviews,
+			seo
 		};
 	} catch (e) {
 		console.log(e);

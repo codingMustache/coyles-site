@@ -9,8 +9,18 @@ export const load = async () => {
                 publishedAt,
         }`
 	);
-	console.log(blogs);
+	const seo = (
+		await client.fetch(
+			`*[_type == "seo" && _id == "contact"]{
+						"tile": pageTitle,
+						"description": metaDescription,
+						"image": openGraphImage.asset->url,
+						}`
+		)
+	)[0];
+
 	return {
-		blogs
+		blogs,
+		seo
 	};
 };

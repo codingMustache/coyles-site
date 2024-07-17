@@ -14,8 +14,19 @@ export const load = async () => {
 		)
 	)[0];
 
+	const seo = (
+		await client.fetch(
+			`*[_type == "seo" && _id == "contact"]{
+						"tile": pageTitle,
+						"description": metaDescription,
+						"image": openGraphImage.asset->url,
+						}`
+		)
+	)[0];
+
 	return {
-		image
+		image,
+		seo
 	};
 };
 

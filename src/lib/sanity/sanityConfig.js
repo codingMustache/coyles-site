@@ -55,7 +55,14 @@ const singletonObj = {
 									.title('Contact')
 									.id('contact')
 									.icon(EarthGlobeIcon)
-									.child(S.document().schemaType('seo').documentId('contact').title('Contact Page'))
+									.child(
+										S.document().schemaType('seo').documentId('contact').title('Contact Page')
+									),
+								S.listItem()
+									.title('Blogs')
+									.id('blogs')
+									.icon(EarthGlobeIcon)
+									.child(S.document().schemaType('seo').documentId('blogs').title('Blogs'))
 							])
 					),
 				S.documentTypeListItem('blogs').title('Blogs').icon(ComposeIcon),

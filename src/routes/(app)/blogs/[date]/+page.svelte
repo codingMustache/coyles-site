@@ -9,6 +9,15 @@
 	};
 </script>
 
+<svelte:head>
+	<title>A blog post by Colye Parker</title>
+	<meta property="og:title" content="A blog post by Colye Parker" />
+	<meta name="description" content={data.title} />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content={data.seo.image} />
+	<meta property="og:url" content={`https://www.coyleparker.art/blogs/${data.publishedAt}`} />
+</svelte:head>
+
 <div class="blog-content">
 	<section>
 		<h1>{data.title}</h1>

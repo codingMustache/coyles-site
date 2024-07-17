@@ -18,6 +18,12 @@ export default {
 								alternative text is of great help for those 
 								people that can rely on it to have a good idea of 
 								what\'s on your page.`
+				},
+				{
+					type: 'number',
+					name: 'place',
+					title: 'Order of appearance',
+					description: `You can set the order of appearance of the images. this can be set to 1, 2, 3 or even 10, 100, 1000. Smaller numbers will appear first.`
 				}
 			]
 		}

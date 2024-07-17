@@ -8,6 +8,15 @@
 	};
 </script>
 
+<svelte:head>
+	<title>{data.seo.title}</title>
+	<meta property="og:title" content={data.seo.title} />
+	<meta name="description" content={data.seo.description} />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content={data.seo.image} />
+	<meta property="og:url" content="https://www.coyleparker.art/blogs" />
+</svelte:head>
+
 <div class="main">
 	<h1>Blogs Posts</h1>
 
