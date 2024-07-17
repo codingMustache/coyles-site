@@ -4,6 +4,7 @@
 
 	const humanReadableDate = (/** @type {string | number | Date} */ dateString) => {
 		const date = new Date(dateString);
+		date.setDate(date.getDate() + 1);
 		return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 	};
 </script>
@@ -40,7 +41,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		margin-top: 14%;
+		margin-top: 10vh;
 		width: 100%;
 	}
 

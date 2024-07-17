@@ -3,8 +3,9 @@
 	import ImageRte from '$lib/components/image-render.svelte';
 	import { PortableText } from '@portabletext/svelte';
 	export let data;
-	const humanReadableDate = (/** @type {string | number | Date} */ dateString) => {
+	const humanReadableDate = (/** @type {string } */ dateString) => {
 		const date = new Date(dateString);
+		date.setDate(date.getDate() + 1);
 		return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 	};
 </script>
@@ -14,7 +15,7 @@
 	<meta property="og:title" content="A blog post by Colye Parker" />
 	<meta name="description" content={data.title} />
 	<meta property="og:type" content="website" />
-	<meta property="og:image" content={data.seo.image} />
+	<meta property="og:image" content={data.image} />
 	<meta property="og:url" content={`https://www.coyleparker.art/blogs/${data.publishedAt}`} />
 </svelte:head>
 

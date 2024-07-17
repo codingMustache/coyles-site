@@ -25,11 +25,10 @@
 		display: flex;
 		justify-content: center;
 		gap: 20px;
-
 		width: 100%;
 		max-width: 1500px;
 		margin: 0 auto;
-		margin-top: 200px;
+		margin-top: 10vh;
 	}
 
 	@media (max-width: 1100px) {

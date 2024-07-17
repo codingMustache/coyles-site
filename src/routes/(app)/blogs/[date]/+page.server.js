@@ -14,22 +14,16 @@ export const load = async ({ params }) => {
                 content
                 }`)
 	)[0];
-	//console.log(blog);
+	console.log(blog);
 
 	const processPortableText = (/** @type {any[]} */ content) => {
-		const processedBlocks = content.map(
-			(
-				/** @type {{ _type: string; url: string; asset: { _ref: import("@sanity/image-url/lib/types/types").SanityImageSource; }; }} */ block
-			) => {
-				if (block._type === 'image') {
-					const builder = imageUrlBuilder(client);
-					block.url = builder.image(block.asset._ref).url();
-				}
-				return block;
+		return content.map((/** @type any } */ block) => {
+			if (block._type === 'image') {
+				const builder = imageUrlBuilder(client);
+				block.url = builder.image(block.asset._ref).url();
 			}
-		);
-
-		return processedBlocks;
+			return block;
+		});
 	};
 
 	const processedContent = processPortableText(blog.content);
