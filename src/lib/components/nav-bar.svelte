@@ -61,6 +61,7 @@
 		font-size: large;
 		box-sizing: border-box;
 		max-height: 100px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	}
 
 	nav a {
