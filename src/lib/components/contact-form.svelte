@@ -133,7 +133,9 @@
 				</div>
 			</div>
 			<div id="drop-zone">
-				<label for="references"> Click Or Drop Photos to upload references Here</label>
+				<label for="references" id="refer-label">
+					<p>Click or Drop Photos For References Here</p>
+				</label>
 				<input bind:files on:change={addPhotos} id="files" name="references" type="file" multiple />
 				{#if files}
 					<div class="thumbnail">
@@ -234,6 +236,9 @@
 		padding: 20px;
 		text-align: center;
 		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	#files {
