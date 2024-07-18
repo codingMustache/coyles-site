@@ -14,10 +14,10 @@ export const load = async ({ params }) => {
 
 		const portfolioImages = (
 			await client.fetch(
-				`*[_type == "portfolioImages"]{
+				`*[_type == "portfolioImages"]|order(place asc){
 					"image": image.asset->url,
 					"altText": image.alt,
-					'place': image.place,
+					'place': place,
 					}`
 			)
 		).sort(
@@ -57,7 +57,7 @@ export const load = async ({ params }) => {
 							}`
 			)
 		)[0];
-
+		console.log(portfolioImages);
 		return {
 			images,
 			portfolioImages,

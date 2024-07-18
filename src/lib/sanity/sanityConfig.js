@@ -24,7 +24,7 @@ const singletonActions = new Set(['publish', 'discardChanges', 'restore']);
 const singletonTypes = new Set(['bio', 'imageGroup']);
 
 const singletonObj = {
-	structure: (/** @type any} */ S) =>
+	structure: (/** @type {any}} */ S, /** @type {any} */ context) =>
 		S.list()
 			.title('Settings')
 			.items([
