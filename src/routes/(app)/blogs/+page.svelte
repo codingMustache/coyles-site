@@ -1,11 +1,29 @@
 <script>
 	// @ts-nocheck
 	export let data;
-
+	let blogs = data.blogs;
+	$: blogs;
+	let amtAdded = data.blogs.length;
+	$: amtAdded;
 	const humanReadableDate = (/** @type {string | number | Date} */ dateString) => {
 		const date = new Date(dateString);
 		date.setDate(date.getDate() + 1);
 		return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+	};
+	const getMorePost = async (e) => {
+		try {
+			const res = await fetch(`/api/blogs?count=${data.blogs.length}`, {
+				method: 'GET'
+			});
+			const json = await res.json();
+			const reqBlogs = json.body.blogs;
+			blogs = [...blogs, ...reqBlogs];
+			amtAdded = reqBlogs.length;
+		} catch (err) {
+			console.log(err);
+		}
+
+		console.log('test');
 	};
 </script>
 
@@ -21,7 +39,7 @@
 <div class="main">
 	<h1>Blogs Posts</h1>
 	<div class="card-list">
-		{#each data.blogs as blog}
+		{#each blogs as blog}
 			<a href={`blogs/${blog.publishedAt}`} aria-label={`A blog post titled: ${blog.title}`}>
 				<div class="blog-card">
 					<div class="blog-card-content">
@@ -33,9 +51,19 @@
 			</a>
 		{/each}
 	</div>
+	{#if amtAdded >= 5}
+		<button type="submit" on:click|preventDefault={getMorePost}> Load More </button>
+	{/if}
 </div>
 
 <style>
+	button {
+		margin: 30px;
+		font-family: inter-bold;
+		font-size: larger;
+		background-color: rgba(0, 0, 0, 0);
+		padding: 20px;
+	}
 	.main {
 		display: flex;
 		flex-direction: column;
@@ -112,6 +140,9 @@
 	@media (max-width: 768px) {
 		.main {
 			margin-top: 20%;
+		}
+		.card-list {
+			width: 100%;
 		}
 	}
 </style>

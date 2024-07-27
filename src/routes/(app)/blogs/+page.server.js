@@ -2,7 +2,8 @@ import client from '$lib/sanity/sanity-client';
 
 export const load = async () => {
 	const blogs = await client.fetch(
-		`*[_type == "blogs" && publishedAt <= now()] | order(publishedAt desc){
+		`*[_type == "blogs" && publishedAt <= now()] | order(publishedAt desc) [0...10]
+		{
                 title,
                 'image': image.asset->url,
                 'altText': image.alt,
@@ -12,11 +13,12 @@ export const load = async () => {
 
 	const seo = (
 		await client.fetch(
-			`*[_type == "seo" && _id == "blogs"]{
-						"title": pageTitle,
-						"description": metaDescription,
-						"image": openGraphImage.asset->url,
-						}`
+			`*[_type == "seo" && _id == "blogs"]
+			{
+				"title": pageTitle,
+				"description": metaDescription,
+				"image": openGraphImage.asset->url,
+			}`
 		)
 	)[0];
 

@@ -35,21 +35,23 @@ export const load = async ({ params }) => {
 		)[0];
 
 		const reviews = await client.fetch(
-			`*[_type == "reviews"]{
-							title,
-							name, 
-							"review": reviewContent,
-							"image": image.asset->url,
-							}`
+			`*[_type == "reviews"]
+			{
+				title,
+				name, 
+				"review": reviewContent,
+				"image": image.asset->url,
+			}`
 		);
 
 		const seo = (
 			await client.fetch(
-				`*[_type == "seo" && _id == "home"]{
-							"title": pageTitle,
-							"description": metaDescription,
-							"image": openGraphImage.asset->url,
-							}`
+				`*[_type == "seo" && _id == "home"]
+				{
+					"title": pageTitle,
+					"description": metaDescription,
+					"image": openGraphImage.asset->url,
+				}`
 			)
 		)[0];
 
