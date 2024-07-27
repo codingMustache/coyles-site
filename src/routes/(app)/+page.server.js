@@ -52,7 +52,7 @@ export const load = async ({ params }) => {
 							}`
 			)
 		)[0];
-		console.log(portfolioImages);
+
 		return {
 			images,
 			portfolioImages,
