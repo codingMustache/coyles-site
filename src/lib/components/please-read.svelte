@@ -3,7 +3,7 @@
 </script>
 
 <div>
-	<h3>Please Read:</h3>
+	<!-- <h3>Please Read:</h3>
 
 	<p>
 		<strong> If you do not receive a response about your tattoo request: </strong>
@@ -19,7 +19,7 @@
 			diversified.
 		</li>
 		<li>I am not accepting new appointments at this time</li>
-	</ul>
+	</ul> -->
 	<img src={data.image.img} alt={data.image.imgTxt} />
 </div>
 
