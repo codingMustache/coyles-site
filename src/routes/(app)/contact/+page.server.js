@@ -8,8 +8,8 @@ export const load = async () => {
 	const image = (
 		await client.fetch(
 			`*[_id == "imageGroup"]{
-        		"img": middleImage.asset->url, 
-    			"imgTxt": middleImage.alt, 
+        		"img": middleImage.asset->url,
+    			"imgTxt": middleImage.alt,
         }`
 		)
 	)[0];
@@ -43,8 +43,8 @@ export const actions = {
 
 		const htmlParser = msgParser(formObj, attachments);
 
-		await emailer(htmlParser, attachments);
+		const sentEmail = await emailer(htmlParser, attachments);
 
-		return { success: true };
+		return { success: sentEmail };
 	}
 };
