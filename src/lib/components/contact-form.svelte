@@ -29,8 +29,11 @@
 			});
 		}
 	};
+	let formState = 'idle';
+	$: formState;
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		formState = 'submitting';
 		const ogForm = new FormData(e.target);
 
 		const pronoun = ogForm.get('pronoun');
@@ -69,8 +72,8 @@
 			method: 'POST',
 			body: form_data
 		})
-			.then((data) => (form = { success: true }))
-			.catch((err) => console.error(err));
+			.then((data) => (formState = 'success'))
+			.catch((err) => (formState = 'error'));
 	};
 </script>
 
@@ -80,8 +83,12 @@
 	on:submit|preventDefault={handleSubmit}
 	enctype="multipart/form-data"
 >
-	{#if form?.success}
+	{#if formState === 'success'}
 		<h3>Thank you For booking</h3>
+	{:else if formState === 'submitting'}
+		<p>Sending Email</p>
+	{:else if formState === 'error'}
+		<p>There was an error submitting the form. Please try again.</p>
 	{:else}
 		<div class="customer">
 			<label for="pronouns"> Pronouns: </label>
@@ -148,7 +155,7 @@
 			<label for="misc"> Anything else you want me to know: </label>
 			<textarea placeholder="" name="misc" rows="4" cols="50" />
 		</div>
-		<button type="submit">Submit</button>
+		<button formaction="?/contact" type="submit">Submit</button>
 	{/if}
 </form>
 

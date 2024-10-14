@@ -31,34 +31,4 @@ export const emailer = async (msg, attachments = []) => {
 		console.error(e);
 		return false;
 	}
-	// const transporter = nodemailer.createTransport({
-	// 	service: 'icloud',
-	// 	auth: {
-	// 		user: email,
-	// 		pass: emailPW
-	// 	}
-	// });
-
-	// await new Promise((resolve, reject) => {
-	// 	// verify connection configuration
-	// 	transporter.verify(function (error, success) {
-	// 		if (error) {
-	// 			console.error(error);
-	// 			reject(error);
-	// 		} else {
-	// 			resolve(success);
-	// 		}
-	// 	});
-	// });
-	// await new Promise((resolve, reject) => {
-	// 	// send mail
-	// 	transporter.sendMail(mailData, (err, info) => {
-	// 		if (err) {
-	// 			console.error(err);
-	// 			reject(err);
-	// 		} else {
-	// 			resolve(info);
-	// 		}
-	// 	});
-	// });
 };
