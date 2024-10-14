@@ -101,13 +101,13 @@
 
 			<div class="name">
 				<label for="first name">First Name</label>
-				<input name="first name" placeholder="First Name" type="text" />
+				<input name="first name" placeholder="First Name" type="text" autocomplete="given-name" />
 				<label for="last name">Last Name</label>
-				<input name="last name" placeholder="Last Name" type="text" />
+				<input name="last name" placeholder="Last Name" type="text" autocomplete="family-name" />
 				<label for="email">Email</label>
-				<input name="email" placeholder="Email" type="email" />
+				<input name="email" placeholder="Email" type="email" autocomplete="email" />
 				<label for="telephone number">Phone #</label>
-				<input name="telephone number" placeholder="Phone Number" type="tel" autocorrect="on" />
+				<input name="telephone number" placeholder="Phone Number" type="tel" autocorrect="tel" />
 			</div>
 		</div>
 		<div class="tattoo">
